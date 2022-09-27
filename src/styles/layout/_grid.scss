@@ -1,0 +1,43 @@
+@use "sass:math";
+$sm-columns: 4;
+
+$gutter: 20px;
+$sm-margin: 5px;
+
+$lg-columns: 12;
+$lg-unit: 75px;
+$lg-max-container: ($lg-unit + $gutter) * $lg-columns;
+
+$grid-margin: 15px;
+
+.container {
+	width: 100%;
+	padding: 0 $sm-margin;
+	margin: 0 auto;
+
+	.row {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	// col-sm-1,clo-md-2,col-lg-1  ^ 이걸붙히면 col- 뒤에붙는게 다온다
+	[class^="col-"] {
+		padding: 0 math.div($gutter, 2);
+	}
+
+	@for $i from 1 through $sm-columns {
+		.col-sm-#{$i} {
+			width: percentage(math.div($i, $sm-columns));
+		}
+	}
+
+	@include responsive(D) {
+		max-width: $lg-max-container;
+	}
+
+	@for $i from 1 through $lg-columns {
+		.col-lg-#{$i} {
+			width: ($lg-unit + $gutter) * $i;
+		}
+	}
+}
