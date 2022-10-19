@@ -1,0 +1,85 @@
+.banner-desk {
+	margin-bottom: 60px;
+	.Card {
+		position: relative;
+		width: 220px;
+		height: 220px;
+		img {
+			display: block;
+			width: 100%;
+			height: 220px;
+			&:hover {
+				border: 5px solid red;
+			}
+		}
+		.Card-Slide {
+			.Card-info {
+				position: absolute;
+				bottom: 10px;
+				left: 10px;
+			}
+		}
+	}
+	.BannerContainer {
+		display: flex;
+		width: 100%;
+		.FirstCard {
+			position: relative;
+			width: 660px;
+			.Card-Slide {
+				height: 440px;
+				img {
+					display: block;
+					width: 100%;
+					height: 100%;
+					&:hover {
+						border: 5px solid red;
+					}
+				}
+				.Card-info {
+					position: absolute;
+					font-size: 20px;
+					bottom: 10px;
+					left: 10px;
+				}
+			}
+		}
+		.TwoGroupCard {
+			display: flex;
+			flex-wrap: wrap;
+		}
+	}
+	.ThreeGroupCard {
+		display: flex;
+	}
+
+	@include responsive(D) {
+		.BannerContainer {
+			.FirstCard {
+				flex-grow: 0;
+				width: 50vw;
+				img {
+					width: 100%;
+					height: auto;
+					object-fit: fill;
+				}
+			}
+			.TwoGroupCard {
+				width: 50vw;
+				.Card {
+					width: 21vw;
+					flex-grow: 1;
+					img {
+						object-fit: cover;
+					}
+				}
+			}
+		}
+		.ThreeGroupCard {
+			// width: 100vw;
+			.Card {
+				width: 20vw;
+			}
+		}
+	}
+}
