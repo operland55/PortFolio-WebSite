@@ -1,133 +1,139 @@
-.footer {
-	background-color: 0d0d0d;
-	padding: 35px 25px;
-	width: 100%;
-	&-header {
-		margin-bottom: 8vw;
-		.footer-logo {
-			margin: 0 auto 30px;
-			width: 46px;
-			height: 44px;
-			cursor: pointer;
-			img {
-				display: block;
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-			}
-		}
-		.footer-nav {
+footer {
+	width: 100vw;
+	background-color: #0d0d0d;
+	.footer {
+		padding: 35px 15px;
+		width: 100%;
+		&-header {
 			margin-bottom: 8vw;
-			li {
-				font-size: 4vw;
-				padding: 10px 0;
-				a {
-					color: red;
-				}
-			}
-		}
-		.footer-community {
-			@include flexbox;
-
-			li {
-				@include flexbox;
-				margin: 0 7px;
-				width: 9.33vw;
-				height: 9.33vw;
-				font-size: 5vw;
-				border-radius: 50%;
-				background-color: #fff;
-				color: black;
-			}
-		}
-	}
-
-	&-bottom {
-		letter-spacing: 0.4px;
-		.footer-address {
-			font-size: 3.2vw;
-			line-height: 1.7;
-			.address-top {
-				margin-bottom: 15px;
-			}
-			.address-bottom {
-				margin-bottom: 15px;
-			}
-		}
-		.footer-produce {
-			font-size: 3.2vw;
-		}
-	}
-
-	@media screen and (min-width: 768px) {
-		padding: 60px 0;
-		&-header {
-			margin-bottom: 30px;
-
-			.footer-nav {
-				li {
-					font-size: 15px;
-				}
-			}
-			.footer-community {
-				li {
-					width: 35px;
-					height: 35px;
-					font-size: 15px;
-				}
-			}
-		}
-		&-bottom {
-			.address-top,
-			.address-bottom,
-			.footer-produce {
-				font-size: 12px;
-			}
-		}
-	}
-
-	@media screen and (min-width: 1024px) {
-		&-header {
-			@include flexbox(start);
-			margin-bottom: 30px;
-			width: 100%;
-			height: 64px;
 			.footer-logo {
-				margin: auto 0;
+				margin: 0 auto 30px;
+				width: 46px;
+				height: 44px;
+				cursor: pointer;
+				img {
+					display: block;
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
 			}
 			.footer-nav {
-				display: flex;
-				margin-left: 40px;
-				margin-bottom: 0;
+				margin-bottom: 8vw;
 				li {
-					@include flexbox;
-					padding: 10px 20px;
-					font-size: 15px;
-					height: 100%;
-
+					font-size: 4vw;
+					padding: 10px 0;
 					a {
-						margin-left: 10px;
+						color: red;
+						margin-left: 5px;
 					}
 				}
 			}
 			.footer-community {
-				flex-grow: 1;
-				justify-content: flex-end;
-			}
-		}
-		.footer-bottom {
-			.footer-address {
-				@include flexbox(between);
-				.address-top,
-				.address-bottom {
-					font-size: 12px;
-					line-height: 2;
+				@include flexbox;
+
+				li {
+					@include flexbox;
+					margin: 0 7px;
+					width: 9.33vw;
+					height: 9.33vw;
+					font-size: 5vw;
+					border-radius: 50%;
+					background-color: #fff;
+					color: black;
 				}
 			}
 		}
 
-		.footer-produce {
-			font-size: 12px;
+		&-bottom {
+			letter-spacing: 0.4px;
+			.footer-address {
+				font-size: 3.2vw;
+				line-height: 1.7;
+				.address-top {
+					margin-bottom: 15px;
+				}
+				.address-bottom {
+					margin-bottom: 15px;
+				}
+			}
+			.footer-produce {
+				font-size: 3.2vw;
+			}
+		}
+
+		@include responsive(T) {
+			padding: 60px 0;
+			&-header {
+				margin-bottom: 30px;
+
+				.footer-nav {
+					li {
+						font-size: 15px;
+					}
+				}
+				.footer-community {
+					li {
+						width: 35px;
+						height: 35px;
+						font-size: 15px;
+					}
+				}
+			}
+			&-bottom {
+				.address-top,
+				.address-bottom,
+				.footer-produce {
+					font-size: 12px;
+				}
+			}
+		}
+
+		@media screen and (min-width: 1024px) {
+			// width: 100vw;
+			background-color: #0d0d0d;
+			&-header {
+				@include flexbox(start);
+				margin-bottom: 30px;
+				width: 100;
+				height: 64px;
+				.footer-logo {
+					margin: auto 0;
+				}
+				.footer-nav {
+					display: flex;
+					margin-left: 40px;
+					margin-bottom: 0;
+					li {
+						@include flexbox;
+						padding: 10px 20px;
+						font-size: 15px;
+						height: 100%;
+
+						a {
+							margin-left: 10px;
+						}
+					}
+				}
+				.footer-community {
+					flex-grow: 1;
+					justify-content: flex-end;
+				}
+			}
+			.footer-bottom {
+				.footer-address {
+					@include flexbox(between);
+					.address-top,
+					.address-bottom {
+						font-size: 12px;
+						line-height: 2;
+					}
+				}
+			}
+
+			.footer-produce {
+				font-size: 12px;
+			}
 		}
 	}
 }
