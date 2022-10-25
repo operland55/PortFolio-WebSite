@@ -4,9 +4,9 @@ $sm-columns: 4;
 $gutter: 20px;
 $sm-margin: 5px;
 
-$lg-columns: 12;
-$lg-unit: 75px;
-$lg-max-container: ($lg-unit + $gutter) * $lg-columns;
+$md-columns: 12;
+$md-unit: 75px;
+$md-max-container: ($md-unit + $gutter) * $md-columns;
 
 $grid-margin: 15px;
 
@@ -20,7 +20,7 @@ $grid-margin: 15px;
 		flex-wrap: wrap;
 	}
 
-	// col-sm-1,clo-md-2,col-lg-1  ^ 이걸붙히면 col- 뒤에붙는게 다온다
+	// col-sm-1,clo-md-2,col-md-1  ^ 이걸붙히면 col- 뒤에붙는게 다온다
 	[class^="col-"] {
 		padding: 0 math.div($gutter, 2);
 	}
@@ -31,13 +31,13 @@ $grid-margin: 15px;
 		}
 	}
 
-	@include responsive(D) {
-		max-width: $lg-max-container;
+	@include responsive(T) {
+		max-width: $md-max-container;
 	}
 
-	@for $i from 1 through $lg-columns {
-		.col-lg-#{$i} {
-			width: ($lg-unit + $gutter) * $i;
+	@for $i from 1 through $md-columns {
+		.col-md-#{$i} {
+			width: ($md-unit + $gutter) * $i;
 		}
 	}
 }
