@@ -1,0 +1,119 @@
+.list-container {
+	.recommend-firstcard {
+		position: relative;
+		width: 100%;
+		padding-bottom: 10px;
+		img {
+			@include img-style;
+		}
+		span {
+			position: absolute;
+			bottom: 15px;
+			font-size: 3.2vw;
+			padding: 0 10px 10px;
+			font-weight: bold;
+		}
+	}
+	.recommend-lists {
+		@include flexbox(start);
+		overflow-x: scroll;
+		scroll-behavior: smooth;
+
+		&::-webkit-scrollbar {
+			background-color: rgb(51, 51, 51);
+			opacity: 0.5;
+			height: 3px;
+			border-radius: 3px;
+		}
+		.recommend-cards {
+			position: relative;
+			width: 37.3333vw;
+			margin-right: 1.6vw;
+			padding-bottom: 20px;
+
+			img {
+				@include img-style(cover, 37.3333vw);
+			}
+			.list-recommend-info {
+				position: absolute;
+				bottom: 15px;
+				padding: 0 10px 10px;
+				font-size: 3.2vw;
+			}
+		}
+	}
+	@include responsive(T) {
+		.recommend-container {
+			@include flexbox(start, start);
+			gap: 6px;
+			.recommend-firstcard {
+				width: 50vw;
+				padding: 5px;
+				img {
+					@include img-style(fill, 50vh);
+				}
+				span {
+					font-size: 18px;
+				}
+			}
+
+			.recommend-lists {
+				@include flexbox(between);
+				flex-wrap: wrap;
+				overflow: hidden;
+				a {
+					.recommend-cards {
+						width: 21.5vw;
+						height: 20vw;
+						margin-right: 0;
+						padding-bottom: 0px;
+						white-space: nowrap;
+						overflow: hidden;
+
+						img {
+							@include img-style;
+						}
+						.list-recommend-info {
+							padding: 0 5px;
+							span {
+								font-size: 18px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@include responsive(BigD) {
+		.recommend-container {
+			@include flexbox(start);
+			gap: 16px;
+			.recommend-firstcard {
+				width: 548px;
+				height: 354px;
+				flex-shrink: 0;
+				img {
+					@include img-style;
+				}
+				span {
+					font-size: 18px;
+				}
+			}
+
+			.recommend-lists {
+				@include flexbox(start);
+				gap: 16px;
+				a {
+					.recommend-cards {
+						width: 166px;
+						height: 169px;
+						img {
+							@include img-style;
+						}
+					}
+				}
+			}
+		}
+	}
+}
