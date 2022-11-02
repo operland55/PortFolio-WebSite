@@ -1,0 +1,15 @@
+@mixin arrowBtn() {
+	opacity: 0;
+	position: absolute;
+	font-size: 30px;
+	transition: all 500ms ease-in-out;
+	top: 50%;
+	transform: translateY(-50%);
+	margin-top: -30px;
+	z-index: 10;
+	width: 30px;
+	height: 50px;
+	background-color: rgba(37, 37, 37, 0.8);
+	color: #fff;
+	pointer-events: none;
+}

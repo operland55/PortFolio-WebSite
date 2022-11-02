@@ -1,5 +1,8 @@
-@mixin no-scrollbar {
-  &::-webkit-scrollbar {
-    display: none !important;
-  }
+@mixin scrollbar {
+	&::-webkit-scrollbar {
+		background-color: rgb(51, 51, 51);
+		opacity: 0.5;
+		height: 3px;
+		border-radius: 3px;
+	}
 }
