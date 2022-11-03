@@ -9,6 +9,11 @@
 			@content;
 		}
 	}
+	@if ($screen == "BigD") {
+		@media screen and (min-width: ($lg-breakpoint - 1px)) {
+			@content;
+		}
+	}
 }
 
 @mixin mobile-only() {
