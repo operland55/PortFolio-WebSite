@@ -1,0 +1,32 @@
+.Character-container {
+	li {
+		@include flexbox(start, start);
+		width: 100%;
+		gap: 15px;
+		.Character-imgBox {
+			height: 150px;
+			img {
+				@include img-style;
+				width: 22vw;
+				border-radius: 5px;
+			}
+		}
+		.Character-info {
+			@include column-flexbox(center, start);
+			height: 100%;
+			font-size: 3.5vw;
+		}
+	}
+	@include responsive(T) {
+		li {
+			.Character-imgBox {
+				img {
+					width: 200px;
+				}
+			}
+			.Character-info {
+				@include text-style(24);
+			}
+		}
+	}
+}

@@ -1,0 +1,49 @@
+.review-container {
+	li {
+		@include flexbox(start, start);
+		width: 100%;
+		gap: 10px;
+		height: 100%;
+		padding-top: 6.66667vw;
+		padding-bottom: 6.66667vw;
+		border-top: 1px dashed rgb(57, 57, 57);
+		border-top-width: 1px;
+		border-top-style: dashed;
+		border-top-color: rgb(57, 57, 57);
+		color: #aaa;
+		.avatar {
+			img {
+				display: block;
+				width: 10vw;
+				height: 10vw;
+				border-radius: 50%;
+			}
+		}
+		.avatar-info {
+			.avatar-name {
+				margin-bottom: 10px;
+			}
+			.avatar-content {
+				width: 100%;
+				overflow-x: auto;
+				margin-bottom: 10px;
+				transition: all 5000ms ease-in-out;
+			}
+			button {
+				color: red;
+			}
+		}
+	}
+	@include responsive(T) {
+		li {
+			@include text-style(14);
+			padding: 25px 0 25px 20px;
+			.avatar {
+				img {
+					width: 32px;
+					height: 32px;
+				}
+			}
+		}
+	}
+}

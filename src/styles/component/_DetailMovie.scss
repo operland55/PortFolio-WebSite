@@ -1,0 +1,156 @@
+.contents {
+	min-height: calc(100vh - 68px);
+	padding-bottom: 20px;
+
+	.contents-PosterContent {
+		position: relative;
+
+		.poster {
+			@include flexbox(start, end);
+			position: absolute;
+			z-index: 5;
+			inset: 0;
+			padding-bottom: 7.46667vw;
+			padding-left: 5.33333vw;
+			padding-right: 5.33333vw;
+			.contents-thumbnail-group {
+				@include flexbox(start, start);
+				.contents-thumbnail-img {
+					width: 31.7333vw;
+					height: 45.0667vw;
+					margin-right: 13px;
+					img {
+						@include img-style;
+					}
+				}
+
+				.contents-info {
+					font-size: 2.66667vw;
+					padding-bottom: 1.33333vw;
+					line-height: 1.5;
+
+					.genre {
+						@include flexbox(start);
+						p {
+							margin-right: 10px;
+						}
+					}
+				}
+				.contents-header {
+					@include flexbox(between);
+					position: absolute;
+					left: 0px;
+					top: 0px;
+					right: 0px;
+					z-index: 10;
+					padding: 4.53333vw;
+					font-size: 6vw;
+				}
+			}
+		}
+		.blur {
+			filter: blur(3px);
+			width: 100vw;
+			height: 84vw;
+
+			img {
+				@include img-style;
+				margin-left: -3%;
+			}
+		}
+	}
+	.contents-video {
+		padding: 26px 15px;
+		cursor: pointer;
+		button {
+			@include flexbox;
+			position: relative;
+			width: 100%;
+			white-space: nowrap;
+			font-weight: bold;
+			padding-left: 10px;
+			padding-right: 10px;
+			height: 12vw;
+			font-size: 4.53333vw;
+			background-color: rgb(238, 65, 53);
+			color: rgb(255, 255, 255);
+			border-radius: 6.66667vw;
+		}
+	}
+	@include responsive(T) {
+		.contents-PosterContent {
+			max-width: 1100px;
+
+			.poster {
+				padding-right: 20px;
+				padding-left: 20px;
+				padding-bottom: 73px;
+				.contents-thumbnail-group {
+					width: 100%;
+					.contents-thumbnail-img {
+						width: 238px;
+						height: 342px;
+					}
+					.contents-info {
+						@include text-style(16);
+						.contents-info-a {
+							margin-bottom: 50px;
+							p {
+								margin-bottom: 20px;
+							}
+						}
+					}
+					.contents-header {
+						@include flexbox(end);
+						padding: 0;
+						position: relative;
+						flex-grow: 1;
+						font-size: 40px;
+					}
+				}
+			}
+
+			.blur {
+				margin: 0 0 30px 0;
+				height: 545px;
+				img {
+					@include img-style(contain);
+					margin: 0%;
+				}
+			}
+		}
+		.contents-video {
+			@include flexbox(end);
+			z-index: 5000;
+			position: absolute;
+			left: 50%;
+			bottom: 330px;
+			width: 100%;
+			max-width: 1100px;
+			padding: 0px 20px;
+			transform: translateX(-50%);
+
+			button {
+				width: auto;
+				cursor: pointer;
+				min-width: 240px;
+				padding-left: 25px;
+				padding-right: 25px;
+				height: 54px;
+				font-size: 20px;
+				z-index: 100000000000;
+			}
+		}
+	}
+	@include responsive(BigD) {
+		.contents-PosterContent {
+			.blur {
+				width: 170%;
+				margin-left: -35%;
+				img {
+					@include img-style(fill);
+				}
+			}
+		}
+	}
+}

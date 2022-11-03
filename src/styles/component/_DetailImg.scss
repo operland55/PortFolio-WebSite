@@ -1,0 +1,9 @@
+.detailImg-container {
+	li {
+		max-width: 100%;
+		margin-bottom: 10px;
+		img {
+			@include img-style(contain);
+		}
+	}
+}

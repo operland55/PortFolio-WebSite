@@ -1,0 +1,190 @@
+.detailContainer {
+	.detailWrapper {
+		background-color: #252525;
+		padding-left: 5.33333vw;
+		padding-right: 5.33333vw;
+		margin-bottom: 5.33333vw;
+		border-radius: 0.533333vw;
+		.detail-nav {
+			@include flexbox;
+			li {
+				padding: 10px;
+				button {
+					display: block;
+					color: #575757;
+					width: 100%;
+					font-weight: bold;
+					font-size: 3.4vw;
+					line-height: 8vw;
+					padding-left: 0.533333vw;
+					padding-right: 0.533333vw;
+				}
+			}
+			li.active button {
+				border-bottom: 0.533333vw solid rgb(238, 65, 53);
+				color: rgb(255, 255, 255);
+				transition: all 300ms ease-in-out;
+			}
+		}
+		.detail-similar-container {
+			transition: all 5000ms ease-in-out;
+			.detail-similar {
+				@include flexbox(between);
+				font-size: 3.2vw;
+				height: 13.3333vw;
+				color: #aaa;
+				border-bottom: 1px solid #575757;
+
+				button.active {
+					color: rgb(238, 65, 53);
+					font-weight: bold;
+				}
+
+				button {
+					color: #aaa;
+					padding: 1.33333vw;
+				}
+			}
+		}
+	}
+
+	.detail-lists {
+		li {
+			@include flexbox(start, start);
+			padding: 20px 0;
+			border-bottom: 1px solid #575757;
+			gap: 20px;
+			.img-box {
+				width: 34.6667vw;
+				height: 19.4667vw;
+				cursor: pointer;
+				img {
+					@include img-style;
+					width: 34.6667vw;
+				}
+			}
+			.detail-lists-info {
+				.title {
+					font-size: 3.46667vw;
+					color: rgb(255, 255, 255);
+					width: 100%;
+					margin-bottom: 00.533333vw;
+				}
+				.release {
+					font-size: 3.46667vw;
+					color: #aaa;
+				}
+			}
+		}
+	}
+
+	.detail-info {
+		.detail-overview,
+		.detail-produce,
+		.detail-genre {
+			background-color: rgb(37, 37, 37);
+			padding: 5.33333vw;
+			margin-bottom: 5.33333vw;
+			border-radius: 0.533333vw;
+		}
+		.detail-overview {
+			p {
+				line-height: 1.5;
+				color: #aaa;
+			}
+		}
+	}
+	.detail-overview,
+	.detail-produce,
+	.detail-genre {
+		h2 {
+			margin-bottom: 32px;
+		}
+	}
+	.detail-produce {
+		h2 {
+			font-weight: bold;
+			font-size: 4vw;
+			color: rgb(255, 255, 255);
+		}
+		p {
+			color: #aaa;
+			line-height: 1.5;
+		}
+	}
+	.detail-genre {
+		span {
+			margin-right: 5px;
+			color: red;
+		}
+	}
+	@include responsive(T) {
+		@include flexbox(start, start);
+
+		.detailWrapper {
+			padding: 20px;
+			margin-bottom: 20px;
+			flex: 1;
+			.detail-nav {
+				justify-content: start;
+				align-items: start;
+				margin-bottom: 10px;
+				li {
+					button {
+						@include text-style(16);
+						padding-left: 15px;
+						padding-right: 15px;
+					}
+				}
+				li.active button {
+					border-bottom-width: 3px;
+				}
+			}
+			.detail-similar-container {
+				.detail-similar {
+					@include text-style(14);
+					height: 50px;
+				}
+				.detail-lists {
+					li {
+						gap: 0px;
+						.img-box {
+							width: 150px;
+							height: 84px;
+							img {
+								@include img-style(cover, 100%);
+								width: 150px;
+							}
+						}
+
+						.detail-lists-info {
+							padding: 0px 0px 0px 15px;
+							.title,
+							.release {
+								@include text-style(14);
+								line-height: 18px;
+							}
+						}
+					}
+				}
+			}
+		}
+		.detail-info {
+			width: 40%;
+			padding: 0 20px;
+			.detail-overview,
+			.detail-produce,
+			.detail-genre {
+				padding: 20px;
+				margin-bottom: 20px;
+				h2 {
+					@include text-style(16);
+				}
+				p,
+				span {
+					@include text-style(14);
+				}
+			}
+		}
+	}
+}
