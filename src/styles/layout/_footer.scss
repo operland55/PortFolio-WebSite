@@ -12,10 +12,7 @@ footer {
 				height: 44px;
 				cursor: pointer;
 				img {
-					display: block;
-					width: 100%;
-					height: 100%;
-					object-fit: cover;
+					@include img-style;
 				}
 			}
 			.footer-nav {
@@ -69,14 +66,14 @@ footer {
 
 				.footer-nav {
 					li {
-						font-size: 15px;
+						@include text-style(14);
 					}
 				}
 				.footer-community {
 					li {
 						width: 35px;
 						height: 35px;
-						font-size: 15px;
+						@include text-style(14);
 					}
 				}
 			}
@@ -84,7 +81,7 @@ footer {
 				.address-top,
 				.address-bottom,
 				.footer-produce {
-					font-size: 12px;
+					@include text-style(12);
 				}
 			}
 		}
@@ -106,8 +103,8 @@ footer {
 					margin-bottom: 0;
 					li {
 						@include flexbox;
+						@include text-style(14);
 						padding: 10px 20px;
-						font-size: 15px;
 						height: 100%;
 
 						a {
@@ -124,15 +121,11 @@ footer {
 				.footer-address {
 					@include flexbox(between);
 					.address-top,
-					.address-bottom {
-						font-size: 12px;
-						line-height: 2;
+					.address-bottom,
+					.footer-produce {
+						@include text-style(12);
 					}
 				}
-			}
-
-			.footer-produce {
-				font-size: 12px;
 			}
 		}
 	}
