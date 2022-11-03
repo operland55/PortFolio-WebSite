@@ -1,62 +1,54 @@
-.promotion-box {
+.famous-box {
 	width: 100vw;
 	height: 20vh;
-	margin: 65vh -15px 0;
+	margin: 72vh -15px 30px;
 
-	.promotionContainer,
-	.promotionContainer2,
-	.promotionContainer3 {
+	.famousContainer,
+	.famousContainer2,
+	.famousContainer3 {
 		@include flexbox(start);
-		font-size: 1.1em;
+		font-size: 1em;
 		padding: 0 20px;
 		gap: 10px;
-		.promotion-ImgBox {
-			width: 25vw;
+		.famous-ImgBox {
+			width: 23vw;
 			height: 18vh;
-
 			img {
-				display: block;
-				width: 100%;
-				height: 100%;
-				object-fit: contain;
-				background-color: inherit;
+				@include img-style(contain);
+				// border-radius: 50%;
 			}
 		}
 	}
-	.promotionContainer {
+	.famousContainer {
 		background-color: #fff;
 		color: black;
 	}
 
-	.promotionContainer2 {
+	.famousContainer2 {
 		background-color: #ffdcc8;
 	}
-	.promotionContainer3 {
+	.famousContainer3 {
 		background-color: skyblue;
 		gap: 10px;
 	}
 	@include responsive(T) {
+		@include text-style(24);
 		margin: 0 15px 0 0;
 		width: 100%;
-		font-size: 23px;
 		padding: 0 0px;
-
-		.promotionContainer,
-		.promotionContainer2,
-		.promotionContainer3 {
+		.famousContainer,
+		.famousContainer2,
+		.famousContainer3 {
+			@include text-style(18);
+			margin-right: 10px;
 			border-radius: 5px;
-			gap: 0;
 			font-weight: 700;
-		}
-		.promotionContainer2 {
-			justify-content: space-between;
-		}
-		.promotionContainer3 {
-			justify-content: space-between;
-			.promotion-phone {
-				@include flexbox;
-				flex-direction: column;
-				gap: 10px;
+			justify-content: center;
+			height: 136px;
+			gap: 10px;
+			.famous-ImgBox {
+				width: 200px;
+				height: 130px;
 			}
 		}
 	}

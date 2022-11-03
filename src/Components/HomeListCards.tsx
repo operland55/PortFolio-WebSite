@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import { makeImagePath } from "../utils";
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
 import { Link } from "react-router-dom";
-interface Data {
+export interface Data {
 	data: any;
 	isLoading: boolean;
+	id?: string;
+	genre?: any;
 }
-function ListCards({ data, isLoading }: Data) {
+function HomeListCards({ data, isLoading }: Data) {
 	const [btnNum, setBtnNum] = useState(0);
 	let widthSize = -1120;
 
@@ -22,17 +24,23 @@ function ListCards({ data, isLoading }: Data) {
 		transform: `translateX(${btnNum * widthSize}px)`,
 	};
 
-	console.log(btnNum);
 	return (
 		<>
 			<ul className="list-items">
 				{isLoading ? (
 					<></>
 				) : (
-					data?.results.map((item: any, key: any) => (
-						<Link to={`/contents/${item.id}`}>
-							<li key={key} className="list-item" style={liStyle}>
-								<img src={makeImagePath(item.backdrop_path)}></img>
+					data?.results.map((item: any, key: number) => (
+						<Link
+							to={
+								item.name
+									? `/contentsTv/${item.id}`
+									: `/ContentsMovie/${item.id}`
+							}
+							key={key}
+						>
+							<li className="list-item" style={liStyle}>
+								<img src={makeImagePath(item.poster_path)}></img>
 								<div className="list-item-title">
 									{item.name ? <p>{item.name}</p> : <p>{item.title}</p>}
 								</div>
@@ -51,4 +59,4 @@ function ListCards({ data, isLoading }: Data) {
 	);
 }
 
-export default ListCards;
+export default HomeListCards;

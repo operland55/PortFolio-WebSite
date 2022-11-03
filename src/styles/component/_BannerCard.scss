@@ -3,11 +3,9 @@
 	.Card {
 		position: relative;
 		width: 220px;
+
 		img {
-			display: block;
-			width: 100%;
-			height: 220px;
-			object-fit: cover;
+			@include img-style(cover, 220px);
 			&:hover {
 				border: 5px solid $red;
 			}
@@ -29,10 +27,7 @@
 			.Card-Slide {
 				height: 440px;
 				img {
-					display: block;
-					width: 100%;
-					height: 100%;
-					object-fit: cover;
+					@include img-style(100%);
 					&:hover {
 						border: 5px solid $red;
 					}
@@ -51,17 +46,15 @@
 		}
 	}
 	.ThreeGroupCard {
+		@include truncate;
 		display: flex;
-		overflow-x: hidden;
 	}
-
 	@include responsive(D) {
 		.BannerContainer {
 			.FirstCard {
 				flex-grow: 0;
 				width: 50vw;
 				img {
-					width: 100%;
 					height: auto;
 				}
 			}
@@ -70,9 +63,6 @@
 				.Card {
 					width: 21vw;
 					flex-grow: 1;
-					img {
-						object-fit: cover;
-					}
 				}
 			}
 		}
@@ -82,6 +72,7 @@
 				rgba(0, 0, 0, 0.8) 0px,
 				rgba(0, 0, 0, 0) 50%
 			);
+
 			.Card {
 				width: 16.6vw;
 			}

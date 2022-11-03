@@ -16,15 +16,8 @@
 	}
 	.recommend-lists {
 		@include flexbox(start);
-		overflow-x: scroll;
-		scroll-behavior: smooth;
-
-		&::-webkit-scrollbar {
-			background-color: rgb(51, 51, 51);
-			opacity: 0.5;
-			height: 3px;
-			border-radius: 3px;
-		}
+		@include scrollbar;
+		overflow-x: auto;
 		.recommend-cards {
 			position: relative;
 			width: 37.3333vw;
@@ -50,10 +43,11 @@
 				width: 50vw;
 				padding: 5px;
 				img {
-					@include img-style(fill, 50vh);
+					@include img-style(cover, 100%);
+					margin-top: 15vw;
 				}
 				span {
-					font-size: 18px;
+					@include text-style(18);
 				}
 			}
 
@@ -61,22 +55,23 @@
 				@include flexbox(between);
 				flex-wrap: wrap;
 				overflow: hidden;
+
 				a {
 					.recommend-cards {
+						@include truncate;
 						width: 21.5vw;
 						height: 20vw;
 						margin-right: 0;
 						padding-bottom: 0px;
-						white-space: nowrap;
-						overflow: hidden;
 
 						img {
 							@include img-style;
 						}
 						.list-recommend-info {
 							padding: 0 5px;
+							bottom: 0px;
 							span {
-								font-size: 18px;
+								@include text-style(18);
 							}
 						}
 					}
@@ -93,19 +88,19 @@
 				width: 548px;
 				height: 354px;
 				flex-shrink: 0;
+				padding: 0;
+
 				img {
 					@include img-style;
-				}
-				span {
-					font-size: 18px;
+					margin-top: 0;
 				}
 			}
-
 			.recommend-lists {
 				@include flexbox(start);
 				gap: 16px;
 				a {
 					.recommend-cards {
+						@include text-style(18);
 						width: 166px;
 						height: 169px;
 						img {

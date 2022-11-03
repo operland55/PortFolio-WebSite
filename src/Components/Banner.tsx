@@ -40,7 +40,7 @@ function Banner() {
 								autoPlay={true}
 								autoPlaySpeed={5000}
 								keyBoardControl={true}
-								customTransition="all .5"
+								customTransition="all 2000ms ease-in-out"
 								arrows={false}
 								transitionDuration={10000}
 								containerClass="carousel-container"
@@ -51,9 +51,9 @@ function Banner() {
 									<></>
 								) : (
 									popularMovie?.results.slice(0, 4).map((item, key) => (
-										<Link to={`Contents/${item.id}`} key={key}>
+										<Link to={`ContentsMovie/${item.id}`} key={key}>
 											<div className="slide">
-												<img src={makeImagePath(item.backdrop_path)}></img>
+												<img src={makeImagePath(item.poster_path)}></img>
 												<div className="info">
 													<span>{item.title}</span>
 												</div>

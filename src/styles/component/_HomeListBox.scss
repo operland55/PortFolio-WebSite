@@ -1,0 +1,77 @@
+.Box-lists {
+	@include flexbox(start, start);
+	@include scrollbar;
+	position: relative;
+	width: 100%;
+	padding-bottom: 10px;
+	overflow-y: hidden;
+	overflow-x: auto;
+
+	.Box-item {
+		width: 80vw;
+		margin-right: 2vw;
+		transition: transform 1000ms ease-in-out;
+		img {
+			@include img-style;
+		}
+		.Box-info {
+			padding: 2.66667vw;
+
+			.name,
+			.overview {
+				@include truncate;
+				font-size: 3.2vw;
+				font-weight: bold;
+			}
+
+			.name {
+				color: rgb(255, 255, 255);
+				margin-bottom: 5px;
+			}
+			.overview {
+				-webkit-line-clamp: 1;
+				-webkit-box-orient: vertical;
+				color: $secondary;
+			}
+		}
+	}
+
+	.leftBtn,
+	.rightBtn {
+		@include arrowBtn;
+	}
+	.leftBtn {
+		left: 0;
+	}
+	.rightBtn {
+		right: 0;
+	}
+	@include responsive(T) {
+		.Box-item {
+			width: 350px;
+			img {
+				height: 230px;
+			}
+			.Box-info {
+				padding: 14px;
+				.name {
+					@include text-style(18);
+				}
+				.overview {
+					@include text-style(12);
+				}
+			}
+		}
+	}
+
+	@include responsive(BigD) {
+		overflow-x: hidden;
+		&:hover {
+			.leftBtn,
+			.rightBtn {
+				opacity: 1;
+				pointer-events: visible;
+			}
+		}
+	}
+}

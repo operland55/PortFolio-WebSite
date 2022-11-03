@@ -1,16 +1,32 @@
-@import "./base/typegraphy.scss";
 @import "./constants/color";
 
 @import "./mixins/flexbox";
+@import "./mixins/typegraphy";
 @import "./mixins/breakpoint";
 @import "./mixins/responsive";
 @import "./mixins/positions";
+@import "./mixins/img-style";
+@import "./mixins/truncate";
 @import "./mixins/text-style";
+@import "./mixins/scrollbar";
+@import "./mixins/arrowBtn";
 
 @import "./component/Menu";
 @import "./component/BannerCard.scss";
 @import "./component/Banner";
 @import "./component/Promotion";
+@import "./component/HomeList";
+@import "./component/HomeListrecommend";
+@import "./component/HomeListBox";
+@import "./component/DetailMovie";
+@import "./component/DetailList";
+@import "./component/DetailReview";
+@import "./component/DetailIntroduce";
+@import "./component/DetailCharacter";
+@import "./component/DetailImg";
+@import "./component/PreviewVideo";
+@import "./component/SearchScreen";
+@import "./component/Search";
 
 @import "./layout/grid";
 @import "./layout/gnb_header";

@@ -1,0 +1,132 @@
+.list-container {
+	width: 100%;
+	padding: 0 0 20px;
+	.list-box {
+		width: 100%;
+		padding-bottom: 30px;
+		.list-title {
+			font-size: 4.5vw;
+			padding-bottom: 20px;
+		}
+		.list-explanation {
+			@include flexbox(between);
+			font-size: 3.5vw;
+			padding-bottom: 25px;
+			.list-name {
+				@include flexbox;
+				p {
+					border: 1px solid $red;
+					padding: 0 5px;
+					margin-right: 8px;
+					color: $red;
+				}
+			}
+		}
+
+		.list-view {
+			font-size: 2.5vw;
+			color: $secondary;
+		}
+
+		.list-items {
+			@include flexbox(start);
+			@include scrollbar;
+			position: relative;
+			width: 100%;
+			overflow-x: auto;
+			scroll-behavior: smooth;
+			padding: 3vw 0;
+
+			li {
+				margin-right: 1.6vw;
+				width: 30vw;
+				flex-shrink: 0;
+				transition: transform 1000ms ease-in-out;
+				img {
+					@include img-style(25.6vh);
+				}
+			}
+			.list-item-title {
+				width: 100%;
+				background-color: #252525;
+				padding: 2.66667vw;
+				font-size: 3.2vw;
+				font-weight: bold;
+
+				p {
+					@include truncate;
+				}
+			}
+
+			.leftBtn,
+			.rightBtn {
+				@include arrowBtn;
+			}
+			.leftBtn {
+				left: 0;
+			}
+			.rightBtn {
+				right: 0;
+			}
+		}
+	}
+	@include responsive(T) {
+		width: 100%;
+		padding: 0;
+		.list-box {
+			width: 100%;
+			padding-bottom: 30px;
+			.list-title {
+				@include text-style(24);
+			}
+
+			.list-explanation {
+				@include flexbox(between);
+				.list-name {
+					.list-theme {
+						@include text-style(13);
+						line-height: 28px;
+					}
+					span {
+						@include text-style(24);
+					}
+				}
+				.list-view {
+					@include text-style(16);
+				}
+			}
+
+			.list-items {
+				overflow: auto;
+				padding: 0;
+				li {
+					position: relative;
+					width: 204px;
+					height: 365px;
+					margin-right: 20px;
+					img {
+						@include img-style(contain, 294px);
+					}
+					.list-item-title {
+						padding: 14px;
+						@include text-style(18);
+					}
+				}
+			}
+		}
+	}
+	@media screen and (min-width: 1109px) {
+		.list-box {
+			&:hover {
+				.leftBtn,
+				.rightBtn {
+					opacity: 1;
+					pointer-events: visible;
+				}
+			}
+			.list-items {
+				overflow-x: hidden;
+			}
+		}
+	}
+}

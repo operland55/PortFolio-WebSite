@@ -27,19 +27,19 @@ function BannerBox({ movie, isLoading, first, two }: Card) {
 				draggable={false}
 				showDots={false}
 				responsive={responsive}
-				ssr={false} // means to render carousel on server-side.
-				infinite={true}
 				autoPlay={true}
 				autoPlaySpeed={10000}
 				keyBoardControl={true}
-				customTransition="all 1000ms ease-in-out"
+				customTransition="all 2000ms ease-in-out"
+				rewind={true}
+				rewindWithAnimation={false}
 				arrows={false}
 			>
 				{isLoading ? (
 					<></>
 				) : (
 					movie?.results.slice(first, two).map((item: any, key: any) => (
-						<Link to={`Contents/${item.id}`} key={key}>
+						<Link to={`ContentsMovie/${item.id}`} key={key}>
 							<div className="Card-Slide">
 								<img src={makeImagePath(item.backdrop_path)}></img>
 								<div className="Card-info">
