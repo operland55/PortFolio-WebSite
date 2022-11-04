@@ -7,7 +7,7 @@ import { useRecoilState, useSetRecoilState } from "recoil";
 import { VideoToggle } from "../atom";
 import { AiOutlineClose } from "react-icons/ai";
 
-function Previewtv() {
+function PreviewTv() {
 	const setVideoBtn = useSetRecoilState(VideoToggle);
 	let { DetailId } = useParams();
 	const { data, isLoading } = useQuery("TvData", () => {
@@ -28,7 +28,7 @@ function Previewtv() {
 				title={data?.results[0].name}
 				className="video"
 				opts={{
-					width: "1100",
+					width: window.innerWidth > 768 ? "1100" : window.innerWidth,
 					height: "555",
 					playerVars: {
 						autoplay: 1, //자동재생 O
@@ -41,4 +41,4 @@ function Previewtv() {
 	);
 }
 
-export default Previewtv;
+export default PreviewTv;

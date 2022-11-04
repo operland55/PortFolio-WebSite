@@ -28,7 +28,7 @@ function PreviewVideo() {
 				title={data?.results[0].name}
 				className="video "
 				opts={{
-					width: "1100",
+					width: window.innerWidth > 768 ? "1100" : window.innerWidth,
 					height: "555",
 					playerVars: {
 						autoplay: 1, //자동재생 O
