@@ -50,16 +50,20 @@ function Banner() {
 								{popularLoading ? (
 									<></>
 								) : (
-									popularMovie?.results.slice(0, 4).map((item, key) => (
-										<Link to={`ContentsMovie/${item.id}`} key={key}>
-											<div className="slide">
-												<img src={makeImagePath(item.poster_path)}></img>
-												<div className="info">
-													<span>{item.title}</span>
+									popularMovie?.results
+										.slice(0, 4)
+										.map((item: any, key: number) => (
+											<Link to={`ContentsMovie/${item.id}`} key={key}>
+												<div className="slide">
+													<img
+														src={makeImagePath(`./${item.poster_path}`)}
+													></img>
+													<div className="info">
+														<span>{item.title}</span>
+													</div>
 												</div>
-											</div>
-										</Link>
-									))
+											</Link>
+										))
 								)}
 							</Carousel>
 						</div>

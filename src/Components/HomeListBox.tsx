@@ -28,7 +28,7 @@ function HomeListBox({ data, isLoading }: Data) {
 					data.results.slice(0, 9).map((item: any, key: any) => (
 						<Link to={`ContentsMovie/${item.id}`} key={key}>
 							<li className="Box-item" style={liStyle}>
-								<img src={makeImagePath(item.backdrop_path)} alt="img" />
+								<img src={makeImagePath(`./${item.backdrop_path}`)} alt="img" />
 								<div className="Box-info">
 									<p className="name">{item.title}</p>
 									<p className="overview">{item.overview}</p>

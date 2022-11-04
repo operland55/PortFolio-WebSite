@@ -40,7 +40,7 @@ function HomeListCards({ data, isLoading }: Data) {
 							key={key}
 						>
 							<li className="list-item" style={liStyle}>
-								<img src={makeImagePath(item.poster_path)}></img>
+								<img src={makeImagePath(`./${item.poster_path}`)}></img>
 								<div className="list-item-title">
 									{item.name ? <p>{item.name}</p> : <p>{item.title}</p>}
 								</div>

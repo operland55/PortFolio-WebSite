@@ -41,7 +41,7 @@ function BannerBox({ movie, isLoading, first, two }: Card) {
 					movie?.results.slice(first, two).map((item: any, key: any) => (
 						<Link to={`ContentsMovie/${item.id}`} key={key}>
 							<div className="Card-Slide">
-								<img src={makeImagePath(item.backdrop_path)}></img>
+								<img src={makeImagePath(`./${item.backdrop_path}`)}></img>
 								<div className="Card-info">
 									<span>{item.title}</span>
 								</div>

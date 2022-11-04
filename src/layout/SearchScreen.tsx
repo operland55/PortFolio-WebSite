@@ -50,7 +50,7 @@ function SearchScreen() {
 								src={
 									item.poster_path == null
 										? NotImg
-										: makeImagePath(item.poster_path)
+										: makeImagePath(`./${item.poster_path}`)
 								}
 								alt="poster_img"
 							/>

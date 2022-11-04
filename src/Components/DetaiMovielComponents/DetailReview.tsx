@@ -20,7 +20,10 @@ function DetailReview() {
 			{reviewData?.results.map((item, key) => (
 				<li key={key}>
 					<div className="avatar">
-						<img src={makeImagePath(item.author_details.avatar_path)} alt="" />
+						<img
+							src={makeImagePath(`./${item.author_details.avatar_path}`)}
+							alt=""
+						/>
 					</div>
 
 					<div className="avatar-info">

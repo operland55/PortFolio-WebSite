@@ -13,13 +13,16 @@ function DetailImg() {
 	return (
 		<ul className="detailImg-container">
 			<li>
-				<img src={makeImagePath(Imgdata?.backdrops[1]?.file_path)} alt="" />
+				<img
+					src={makeImagePath(`/${Imgdata?.backdrops[1]?.file_path}`)}
+					alt=""
+				/>
 			</li>
 			<li>
-				<img src={makeImagePath(Imgdata?.posters[0]?.file_path)} alt="" />
+				<img src={makeImagePath(`/${Imgdata?.posters[0]?.file_path}`)} alt="" />
 			</li>
 			<li>
-				<img src={makeImagePath(Imgdata?.posters[1]?.file_path)} alt="" />
+				<img src={makeImagePath(`/${Imgdata?.posters[1]?.file_path}`)} alt="" />
 			</li>
 		</ul>
 	);

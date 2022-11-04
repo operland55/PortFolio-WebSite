@@ -18,7 +18,7 @@ function DetailCharacter() {
 			{dataCast?.cast.slice(0, 10).map((item: any, key) => (
 				<li key={key}>
 					<div className="Character-imgBox">
-						<img src={makeImagePath(item.profile_path)} alt="" />
+						<img src={makeImagePath(`./${item.profile_path}`)} alt="" />
 					</div>
 
 					<div className="Character-info">

@@ -17,7 +17,7 @@ function DetailSimilar({ data }: any) {
 					}}
 				>
 					<div className="img-box">
-						<img src={makeImagePath(item.backdrop_path)} alt="" />
+						<img src={makeImagePath(`./${item.backdrop_path}`)} alt="" />
 					</div>
 
 					<div className="detail-lists-info">

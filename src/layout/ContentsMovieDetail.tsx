@@ -42,7 +42,7 @@ function ContentsMovieDetail() {
 									<div className="contents-thumbnail-group">
 										<div className="contents-thumbnail-img">
 											<img
-												src={makeImagePath(data?.poster_path)}
+												src={makeImagePath(`./${data?.poster_path}`)}
 												alt="backdrop-img"
 											/>
 										</div>
@@ -89,7 +89,7 @@ function ContentsMovieDetail() {
 
 								<div className="blur">
 									<img
-										src={makeImagePath(data?.backdrop_path || "")}
+										src={makeImagePath(`./${data?.backdrop_path || ""}`)}
 										alt="img"
 									/>
 								</div>
