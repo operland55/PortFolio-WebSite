@@ -16,7 +16,7 @@
 		gap: 10px;
 		&-items {
 			@include truncate;
-			padding-bottom: 10.6667vw;
+			padding-bottom: 13.6667vw;
 			.searchScreen-item-img {
 				width: 28.8vw;
 				height: 41.6vw;
@@ -46,7 +46,7 @@
 			background-color: #191919;
 
 			&-items {
-				padding-bottom: 30px;
+				padding-bottom: 25px;
 				.searchScreen-item-img {
 					width: 170px;
 					height: 335px;
