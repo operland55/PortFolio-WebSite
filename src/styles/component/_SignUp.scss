@@ -1,0 +1,183 @@
+.sign-container {
+	padding-bottom: 30px;
+	header {
+		position: relative;
+		height: 18.1333vw;
+		button {
+			position: absolute;
+			right: 4vw;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 4.53333vw;
+			height: 4.53333vw;
+			border-color: red;
+			svg {
+				font-size: 30px;
+				color: #fff;
+			}
+		}
+
+		.bar {
+			position: absolute;
+			left: 0px;
+			right: 0px;
+			bottom: 0px;
+			width: 100%;
+			background-color: black;
+			&::after {
+				display: block;
+				content: "";
+				width: 40%;
+				height: 1.6vw;
+				background-color: rgb(238, 65, 53);
+			}
+		}
+	}
+	main {
+		@include padding-style;
+		.sign-title {
+			padding: 5.6667vw 0;
+		}
+
+		form {
+			.sign-input {
+				padding: 4vw 0;
+				.sign-input-id {
+					@include flexbox(between);
+					button {
+						color: red;
+						flex-shrink: 0;
+					}
+				}
+				.sign-input-id,
+				.sign-input-password {
+					background-color: rgb(37, 37, 37);
+					padding-left: 4vw;
+					padding-right: 4vw;
+					border-radius: 1.33333vw;
+					font-size: 3.2vw;
+					border-radius: 6px;
+					input {
+						width: 100%;
+						height: 12.8vw;
+						color: #fff;
+					}
+				}
+				.sign-input-password {
+					margin: 0.266667vw 0vw 0vw;
+				}
+				p {
+					font-size: 3.2vw;
+					margin-top: 3.2vw;
+					color: #aaa;
+				}
+			}
+			.sign-btn {
+				padding: 5.3333vw 0;
+				button {
+					width: 100%;
+					font-weight: bold;
+					padding-left: 10px;
+					padding-right: 10px;
+					height: 12vw;
+					font-size: 4.53333vw;
+					background-color: rgb(238, 65, 53);
+					color: rgb(255, 255, 255);
+					border-radius: 8vw;
+				}
+			}
+			.sign-login-sns {
+				margin-top: 6.93333vw;
+				padding: 5.3333vw 0;
+				p {
+					color: #aaa;
+					text-align: center;
+				}
+				.sign-login-icons {
+					@include flexbox;
+					padding: 5.3333vw 0;
+					gap: 3.4vw;
+					li {
+						@include flexbox;
+						border-radius: 50%;
+						width: 14.4vw;
+						height: 12.4vw;
+						svg {
+							font-size: 7.2vw;
+						}
+					}
+				}
+			}
+		}
+	}
+	@include responsive(T) {
+		padding-bottom: 0;
+		max-width: 490px;
+		margin: 30px auto 130px;
+		header {
+			height: 68px;
+
+			.bar {
+				&::after {
+					height: 6px;
+				}
+			}
+		}
+		main {
+			background-color: #252525;
+			padding: 0 20px;
+			.sign-title {
+				padding: 40px 20px 20px;
+			}
+
+			form {
+				.sign-input {
+					padding: 15px 0;
+
+					.sign-input-id,
+					.sign-input-password {
+						@include text-style(12);
+						background-color: rgb(51, 51, 51);
+						padding: 0 20px;
+						input {
+							height: 48px;
+							background-color: rgb(51, 51, 51);
+						}
+					}
+					p {
+						@include text-style(12);
+						margin-top: 12px;
+						padding: 0 15px;
+					}
+				}
+				.sign-btn {
+					padding: 0;
+					button {
+						@include text-style(18);
+						height: 58px;
+					}
+				}
+
+				.sign-login-sns {
+					margin-top: 30px;
+					padding: 20px;
+					.sign-login-icons {
+						padding: 20px 0;
+						gap: 10px;
+						li {
+							width: 54px;
+							height: 54px;
+							padding: 0 5px;
+							svg {
+								font-size: 24px;
+							}
+						}
+					}
+					.sign-login-exp {
+						color: #575757;
+					}
+				}
+			}
+		}
+	}
+}
