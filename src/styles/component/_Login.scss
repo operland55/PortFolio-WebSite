@@ -1,0 +1,193 @@
+.login-container {
+	.login-header {
+		@include flexbox(between);
+		cursor: pointer;
+		width: 100%;
+		height: 18.1333vw;
+		padding-left: 2.3vw;
+		padding-right: 2.3vw;
+		.login-back-icon {
+			font-size: 4.5vw;
+			margin-top: 5px;
+		}
+		h1 {
+			font-weight: bold;
+			font-size: 5.33333vw;
+			line-height: 1;
+			color: rgb(255, 255, 255);
+			margin-right: 4.5vw;
+		}
+	}
+	.login-form {
+		padding-top: 8vw;
+		padding-bottom: 8vw;
+		.login-form-wrapper {
+			.login-input {
+				padding: 1.06667vw 2.33333vw;
+				.login-input-box {
+					input {
+						width: 100%;
+						height: 12.8vw;
+						padding-left: 4vw;
+						padding-right: 4vw;
+						color: rgb(255, 255, 255);
+						border: 0px;
+						outline: none;
+						border-radius: 1.33333vw;
+						font-size: inherit;
+						background-color: #333;
+					}
+				}
+			}
+			.login-button {
+				padding: 2.33333vw;
+				padding-top: 8vw;
+				padding-bottom: 5.5vw;
+				button {
+					position: relative;
+					width: 100%;
+					font-weight: bold;
+					padding-left: 10px;
+					padding-right: 10px;
+					height: 12vw;
+					font-size: 4.53333vw;
+					background-color: $red;
+					color: #fff;
+					border-radius: 8vw;
+				}
+			}
+		}
+		.login-links {
+			@include flexbox;
+			margin-bottom: 6.9vw;
+			li {
+				a {
+					color: #aaa;
+					font-size: 3.2vw;
+					padding-left: 4vw;
+					padding-right: 4vw;
+					display: block;
+					position: relative;
+				}
+				&:nth-child(1),
+				&:nth-child(2) {
+					a {
+						&::after {
+							display: block;
+							content: "";
+							width: 1px;
+							background-color: rgb(51, 51, 51);
+							position: absolute;
+							right: 0px;
+							top: 0px;
+							bottom: 0px;
+						}
+					}
+				}
+			}
+		}
+		.login-sns {
+			p {
+				@include flexbox;
+				color: rgb(87, 87, 87);
+				font-size: 3.46667vw;
+				padding-left: 1.6vw;
+				padding-right: 1.6vw;
+			}
+		}
+		.login-icons {
+			@include flexbox;
+			padding-top: 5.33333vw;
+			padding-bottom: 5.33333vw;
+			gap: 3.4vw;
+			li {
+				@include flexbox;
+				border-radius: 50%;
+				width: 14.4vw;
+				height: 12.4vw;
+				svg {
+					font-size: 7.2vw;
+				}
+			}
+		}
+	}
+	@include responsive(T) {
+		@include flexbox;
+		.login-form {
+			max-width: 490px;
+			padding: 0;
+			margin: 120px 0;
+			background-color: #252525;
+			.login-box {
+				text-align: center;
+				padding: 50px 0px 0px;
+				h1 {
+					font-size: 28px;
+					line-height: 1;
+				}
+				p {
+					@include text-style(16);
+					color: #aaa;
+					margin-top: 40px;
+				}
+			}
+
+			.login-form-wrapper {
+				padding: 30px 12px 0;
+				padding-left: 12px;
+				padding-right: 12px;
+				.login-input {
+					padding: 4px 20px;
+					.login-input-box {
+						@include text-style(14);
+						input {
+							padding: 0 14px;
+							height: 48px;
+							border-radius: 0px;
+							background-color: #464849;
+						}
+					}
+				}
+				.login-button {
+					padding: 20px;
+					button {
+						@include text-style(16);
+						height: 54px;
+					}
+				}
+			}
+			.login-links {
+				margin-bottom: 20px;
+				li {
+					a {
+						@include text-style(12);
+						padding-left: 15px;
+						padding-right: 15px;
+					}
+				}
+			}
+			.login-sns {
+				padding: 30px 0;
+				p {
+					@include text-style(16);
+				}
+
+				.login-icons {
+					padding: 20px 0;
+					gap: 10px;
+					margin-bottom: 10px;
+					li {
+						width: 54px;
+						height: 54px;
+						svg {
+							font-size: 32px;
+						}
+					}
+					.login-exp {
+						@include text-style(12);
+					}
+				}
+			}
+		}
+	}
+}
