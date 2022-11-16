@@ -7,12 +7,12 @@
 
 		.poster {
 			@include flexbox(start, end);
+			@include padding-style;
 			position: absolute;
 			z-index: 5;
 			inset: 0;
 			padding-bottom: 7.46667vw;
-			padding-left: 5.33333vw;
-			padding-right: 5.33333vw;
+
 			.contents-thumbnail-group {
 				@include flexbox(start, start);
 				.contents-thumbnail-img {
