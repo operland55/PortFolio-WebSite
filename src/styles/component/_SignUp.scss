@@ -44,7 +44,9 @@
 				padding: 4vw 0;
 				.sign-input-id {
 					@include flexbox(between);
-					button {
+					.check {
+						@include text-style(12);
+						cursor: pointer;
 						color: red;
 						flex-shrink: 0;
 					}
