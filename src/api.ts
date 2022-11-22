@@ -1,13 +1,13 @@
 const API_KEY = "bb50b072ab393b23b85d0c258de3c425";
 const BASE_PATH = "https://api.themoviedb.org/3";
 
-export interface Icredits {
-	cast: Icast[];
+export interface ICredits {
+	cast: ICast[];
 }
-export interface Icast {
+export interface ICast {
 	id: number;
 	name: string;
-	popularity: 7.861;
+	popularity: number;
 	profile_path: number;
 	character: string;
 	credit_id: string;
@@ -114,7 +114,7 @@ export interface IGetDetailMovie {
 	id: number;
 	original_title: string;
 	overview: string;
-	poster_path: any;
+	poster_path: string;
 	release_date: string;
 	runtime: number;
 	title: string;
@@ -138,13 +138,13 @@ export function getMovies() {
 
 export function getPopularMovie() {
 	return fetch(
-		`${BASE_PATH}/movie/popular?api_key=${API_KEY}&language=en-US&page=2`
+		`${BASE_PATH}/movie/popular?api_key=${API_KEY}&language=en-US&page=1`
 	).then((res) => res.json());
 }
 
 export function getUpComingMovie() {
 	return fetch(
-		`${BASE_PATH}/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`
+		`${BASE_PATH}/movie/upcoming?api_key=${API_KEY}&language=en-US&page=2`
 	).then((res) => res.json());
 }
 export function getSimilarMovies(movieId?: Number | string) {
@@ -153,18 +153,18 @@ export function getSimilarMovies(movieId?: Number | string) {
 	).then((res) => res.json());
 }
 
-export function getDetailMovie(movieId: any) {
+export function getDetailMovie(movieId: unknown) {
 	return fetch(
 		`${BASE_PATH}/movie/${movieId}?api_key=${API_KEY}&language=en-US`
 	).then((res) => res.json());
 }
 
-export function getReviewMovie(movieId: any) {
+export function getReviewMovie(movieId: unknown) {
 	return fetch(
 		`${BASE_PATH}/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=1`
 	).then((res) => res.json());
 }
-export function getCastMovie(movieId: any) {
+export function getCastMovie(movieId: unknown) {
 	return fetch(
 		`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=bb50b072ab393b23b85d0c258de3c425&language=en-US`
 	).then((res) => res.json());
@@ -182,7 +182,7 @@ export function getVideoMovie(movieId: string) {
 }
 // Tv
 
-export function getDetailTV(TvId: any) {
+export function getDetailTV(TvId: unknown) {
 	return fetch(
 		`${BASE_PATH}/tv/${TvId}?api_key=${API_KEY}&language=en-US`
 	).then((res) => res.json());
@@ -194,13 +194,13 @@ export function getTopTv() {
 	).then((res) => res.json());
 }
 
-export function getSimilarTv(TvId: any) {
+export function getSimilarTv(TvId: unknown) {
 	return fetch(
 		`${BASE_PATH}/tv/${TvId}}/similar?api_key=${API_KEY}&language=en-US&page=1`
 	).then((res) => res.json());
 }
 
-export function getCastTv(TvId: any) {
+export function getCastTv(TvId: unknown) {
 	return fetch(`
 	${BASE_PATH}/tv/${TvId}/credits?api_key=${API_KEY}&language=en-US
 	`).then((res) => res.json());
@@ -226,7 +226,7 @@ export function getGenreId() {
 
 // search
 
-export function InfoSearch(search: any) {
+export function InfoSearch(search: unknown) {
 	return fetch(
 		`${BASE_PATH}/search/multi?api_key=${API_KEY}&language=en-US&query=${search}&page=1&include_adult=false`
 	).then((res) => res.json());
