@@ -10,6 +10,7 @@
 @import "./mixins/text-style";
 @import "./mixins/scrollbar";
 @import "./mixins/arrowBtn";
+@import "./mixins/side-padding";
 
 @import "./component/Menu";
 @import "./component/BannerCard.scss";
@@ -27,6 +28,8 @@
 @import "./component/PreviewVideo";
 @import "./component/SearchScreen";
 @import "./component/Search";
+@import "./component/Login";
+@import "./component/SignUp";
 
 @import "./layout/grid";
 @import "./layout/gnb_header";
