@@ -12,7 +12,6 @@ $grid-margin: 15px;
 
 .container {
 	width: 100%;
-	padding: 0 $sm-margin;
 	margin: 0 auto;
 
 	.row {
@@ -33,6 +32,7 @@ $grid-margin: 15px;
 
 	@include responsive(T) {
 		max-width: $md-max-container;
+		padding: 0px 10px;
 	}
 
 	@for $i from 1 through $md-columns {
