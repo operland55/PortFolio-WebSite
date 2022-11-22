@@ -9,6 +9,8 @@ import Search from "./Routes/Search";
 import ContentsMovieDetail from "./layout/ContentsMovieDetail";
 import ContentsTvDetail from "./layout/ContentsTvDetail";
 import Preview from "./Components/PreviewVideo";
+import Login from "./Routes/Login";
+import SignUp from "./layout/SignUp";
 function App() {
 	return (
 		<>
@@ -18,6 +20,9 @@ function App() {
 					<Route path="/Search" element={<Search />}></Route>
 					<Route path="/Search/:id" element={<Search />}></Route>
 					<Route path="/ViewAll" element={<ViewAll />}></Route>
+					<Route path="/Login" element={<Login />}></Route>
+					<Route path="/SingUp" element={<SignUp />}></Route>
+
 					<Route
 						path="/ContentsMovie/:DetailId"
 						element={<ContentsMovieDetail />}
