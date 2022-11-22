@@ -1,5 +1,5 @@
 .list-container {
-	.recommend-FirstCard {
+	.recommend-firstcard {
 		position: relative;
 		width: 100%;
 		padding-bottom: 10px;
@@ -39,7 +39,7 @@
 		.recommend-container {
 			@include flexbox(start, start);
 			gap: 6px;
-			.recommend-FirstCard {
+			.recommend-firstcard {
 				width: 50vw;
 				padding: 5px;
 				img {
@@ -84,7 +84,7 @@
 		.recommend-container {
 			@include flexbox(start);
 			gap: 16px;
-			.recommend-FirstCard {
+			.recommend-firstcard {
 				width: 548px;
 				height: 354px;
 				flex-shrink: 0;
