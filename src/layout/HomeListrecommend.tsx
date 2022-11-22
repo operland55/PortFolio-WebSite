@@ -7,7 +7,7 @@ function HomeListRecommend({ data, isLoading }: Data) {
 	return (
 		<div className="recommend-container">
 			<Link to={`ContentsMovie/${data?.results[0].id}`}>
-				<div className="recommend-FirstCard">
+				<div className="recommend-firstcard">
 					<img
 						src={makeImagePath(`/${data?.results[0].backdrop_path}`)}
 						alt=""

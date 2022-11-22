@@ -4,7 +4,7 @@ import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
 import { Link } from "react-router-dom";
 export interface Data {
 	data: any;
-	isLoading: boolean;
+	isLoading?: boolean;
 	id?: string;
 	genre?: any;
 }

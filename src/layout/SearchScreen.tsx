@@ -21,8 +21,8 @@ function SearchScreen() {
 	const ImgData = useMemo(() => {
 		return data?.results?.filter((item: any) => item.known_for == null);
 	}, [data]);
-	console.log(location);
 
+	console.log(data);
 	return (
 		<>
 			{keyword ? (

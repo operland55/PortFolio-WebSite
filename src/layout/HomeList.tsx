@@ -14,7 +14,7 @@ import {
 	AiOutlineArrowLeft,
 	AiFillPicture,
 } from "react-icons/ai";
-import HomeListrecommend from "../Components/HomeListrecommend";
+import HomeListrecommend from "./HomeListrecommend";
 import HomeListBox from "../Components/HomeListBox";
 
 function List() {
