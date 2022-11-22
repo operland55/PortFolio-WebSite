@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import {
@@ -9,20 +9,39 @@ import {
 } from "../api";
 import { makeImagePath } from "../utils";
 import { AiOutlineArrowLeft, AiOutlineHeart } from "react-icons/ai";
-import { VideoToggle } from "../atom";
-import { useRecoilState } from "recoil";
+import { LoginId, MyList, VideoToggle } from "../atom";
+import { useRecoilState, useRecoilValue } from "recoil";
 import Header from "../Components/Header";
 import Footer from "./Footer";
-import DetailList from "../Components/DetaiMovielComponents/DetailList";
+import DetailList from "../Components/DetailMovieComponents/DetailList";
 import DetailTvList from "../Components/DetailTvComponents/DetailTvList";
-import Previewtv from "../Components/Previewtv";
+import PreviewTv from "../Components/PreviewTv";
 
 function ContentsTvDetail() {
 	let { DetailId } = useParams();
+	const [myListObj, setMyListObj] = useRecoilState(MyList);
+	const id = useRecoilValue(LoginId);
 	const [videoBtn, setVideoBtn] = useRecoilState(VideoToggle);
-	const { data, isLoading } = useQuery("TvDetail", () => {
-		return getDetailTV(DetailId);
-	});
+	const [data, setData] = useState<IGetDetailMovie>();
+	const [isLoading, setIsLoading] = useState(true);
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+
+		(async () => {
+			const response = await fetch(
+				`https://api.themoviedb.org/3/tv/${DetailId}?api_key=bb50b072ab393b23b85d0c258de3c425&language=en-US`
+			);
+			const json = await response.json();
+			setData(json);
+			setIsLoading(false);
+		})();
+	}, [DetailId]);
+
+	// const { data, isLoading } = useQuery("TvDetail", () => {
+	// 	return getDetailTV(DetailId);
+	// });
+
 	const { data: genre, isLoading: genreLoading } = useQuery(
 		"GenreId",
 		getGenreId
@@ -32,6 +51,22 @@ function ContentsTvDetail() {
 		setVideoBtn((cur) => !cur);
 	};
 
+	const myListBtn = () => {
+		if (id) {
+			let questions = confirm("Are you going to put it on the list?");
+			if (questions) {
+				setMyListObj((oldData: any) => {
+					return [{ id, data }, ...oldData];
+				});
+				window.localStorage.setItem(`${id}`, JSON.stringify(myListObj));
+			}
+		} else {
+			alert("Please Login!");
+		}
+
+		window.localStorage.getItem(`${id}`);
+	};
+	console.log(data);
 	return (
 		<>
 			<div className="sm-hidden">
@@ -42,7 +77,7 @@ function ContentsTvDetail() {
 					<div className="col-sm-4">
 						<div className="contents">
 							<div className="contents-PosterContent">
-								{videoBtn ? <Previewtv /> : null}
+								{videoBtn ? <PreviewTv /> : null}
 								<div className="poster">
 									<div className="contents-thumbnail-group">
 										<div className="contents-thumbnail-img">
@@ -85,7 +120,7 @@ function ContentsTvDetail() {
 												<AiOutlineArrowLeft />
 											</div>
 
-											<div className="contents-love">
+											<div className="contents-love" onClick={myListBtn}>
 												<AiOutlineHeart />
 											</div>
 										</div>
