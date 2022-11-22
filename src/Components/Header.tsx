@@ -1,16 +1,24 @@
 import React, { useState } from "react";
-import { useRecoilState } from "recoil";
-import { Link } from "react-router-dom";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../assets/logo.png";
 import { BsSearch } from "react-icons/bs";
 import { BiMenu } from "react-icons/bi";
+import { AiOutlineArrowDown } from "react-icons/ai";
 import Menu from "./Menu";
-import { MenuToggle } from "../atom";
+import { LoginId, MenuToggle } from "../atom";
 function Header() {
 	const [menuBtn, setMenuBtn] = useRecoilState(MenuToggle);
+	const [profile, setProfile] = useState(false);
+	const [Id, setId] = useRecoilState(LoginId);
 
+	const navigate = useNavigate();
 	const onClick = () => {
 		setMenuBtn((toggle) => !toggle);
+	};
+
+	const profileShow = () => {
+		setProfile((cur) => !cur);
 	};
 	return (
 		<div className="container">
@@ -39,7 +47,43 @@ function Header() {
 										</div>
 
 										<div className="header-top md-only">
-											<p>Login</p>
+											{Id ? (
+												<>
+													<p className="header-top-id" onClick={profileShow}>
+														{Id} <AiOutlineArrowDown />
+													</p>
+													{profile ? (
+														<div className="header-profile">
+															<div className="profile-img">
+																<img src={Logo} alt="logo" />
+															</div>
+															<ul>
+																<li>{Id}</li>
+																<li>My love</li>
+																<li>My Page</li>
+																<li
+																	onClick={() => {
+																		setId("");
+																		// location.reload();
+																	}}
+																>
+																	Logout
+																</li>
+															</ul>
+														</div>
+													) : null}
+												</>
+											) : (
+												<p
+													className="header-top-login"
+													onClick={() => {
+														navigate("/login");
+													}}
+												>
+													Login
+												</p>
+											)}
+
 											<p>Service center</p>
 										</div>
 
@@ -59,7 +103,7 @@ function Header() {
 															<Link to={"/"}>Home</Link>
 														</li>
 														<li>
-															<Link to={"/Viewall"}>View all</Link>
+															<Link to={"/ViewAll"}>View all</Link>
 														</li>
 														<li className="header-bottom-items">
 															<Link to={"/Favorites"}>Favorites</Link>
