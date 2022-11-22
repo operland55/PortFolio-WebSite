@@ -59,7 +59,7 @@ function DetailTvList({ data, isLoading, id, genre }: Data) {
 							</div>
 						</div>
 
-						<DetailTvSimilar data={similarData} />
+						<DetailTvSimilar id={id} />
 					</div>
 				) : value == "Review" ? (
 					<DetailTvReview />

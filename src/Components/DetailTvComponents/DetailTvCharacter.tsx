@@ -1,12 +1,12 @@
 import React from "react";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
-import { getCastTv, Icredits, IImg } from "../../api";
+import { getCastTv, ICredits, IImg } from "../../api";
 import { makeImagePath } from "../../utils";
 
 function DetailTvCharacter() {
 	let { DetailId } = useParams();
-	const { data: dataCast, isLoading: CastLoading } = useQuery<Icredits>(
+	const { data: dataCast, isLoading: CastLoading } = useQuery<ICredits>(
 		"CastData",
 		() => {
 			return getCastTv(DetailId);
