@@ -1,5 +1,6 @@
 .gnb-header {
 	@include flexbox(between);
+
 	position: relative;
 	z-index: 100;
 	.logo {
@@ -25,15 +26,41 @@
 		.header-top {
 			@include flexbox(end);
 			@include text-style(14);
+			position: relative;
 			height: 39px;
 			color: gray;
 			border-bottom: 1px solid rgb(57, 57, 57);
 			cursor: pointer;
-
+			.header-top-id {
+				position: relative;
+				svg {
+					position: absolute;
+					font-size: 12px;
+					top: 8px;
+					right: 13px;
+				}
+			}
 			p {
 				&:first-child::after {
 					content: "|";
 					margin: 0 9px;
+				}
+			}
+			.header-profile {
+				@include column-flexbox;
+				min-width: 135px;
+				background-color: black;
+				position: absolute;
+				top: 32px;
+				right: 70px;
+				padding: 14px;
+				gap: 10px;
+				.profile-img {
+					width: 76px;
+					height: 76px;
+					img {
+						@include img-style;
+					}
 				}
 			}
 		}
