@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import {
-	getDetailMovie,
-	getDetailTV,
-	getGenreId,
-	IGetDetailMovie,
-} from "../api";
+import { getGenreId, IGetDetailMovie } from "../api";
 import { makeImagePath } from "../utils";
 import { AiOutlineArrowLeft, AiOutlineHeart } from "react-icons/ai";
 import { LoginId, MyList, VideoToggle } from "../atom";
@@ -20,8 +15,8 @@ import PreviewTv from "../Components/PreviewTv";
 function ContentsTvDetail() {
 	let { DetailId } = useParams();
 	const [myListObj, setMyListObj] = useRecoilState(MyList);
-	const id = useRecoilValue(LoginId);
 	const [videoBtn, setVideoBtn] = useRecoilState(VideoToggle);
+	const id = useRecoilValue(LoginId);
 	const [data, setData] = useState<IGetDetailMovie>();
 	const [isLoading, setIsLoading] = useState(true);
 
