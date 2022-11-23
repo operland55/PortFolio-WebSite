@@ -1,9 +1,10 @@
 import React from "react";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { FilterIdList, LoginId, MyList } from "../atom";
 
 function FavoriteList() {
-	const [myList, setMyList] = useRecoilState(FilterIdList);
+	const myList = useRecoilValue(FilterIdList);
+	const setMylist = useSetRecoilState(MyList);
 	const myId = useRecoilValue(LoginId);
 	// const myList = useRecoilValue(FilterIdList);
 
