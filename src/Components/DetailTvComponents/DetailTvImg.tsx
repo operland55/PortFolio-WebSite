@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
-import { getCastMovie, getImgMovie, getImgTv, ICredits, IImg } from "../../api";
+import { getCastMovie, getImgTv } from "../../api";
 import { makeImagePath } from "../../utils";
 
 function DetailTvImg() {
