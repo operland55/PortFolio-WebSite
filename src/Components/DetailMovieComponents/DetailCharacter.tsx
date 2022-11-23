@@ -13,22 +13,7 @@ function DetailCharacter() {
 		}
 	);
 
-	return (
-		<ul className="Character-container">
-			{dataCast?.cast.slice(0, 10).map((item: any, key: any) => (
-				<li key={key}>
-					<div className="Character-imgBox">
-						<img src={makeImagePath(`./${item.profile_path}`)} alt="" />
-					</div>
-
-					<div className="Character-info">
-						<p>{item.name}</p>
-						<p>{item.character}</p>
-					</div>
-				</li>
-			))}
-		</ul>
-	);
+	return <></>;
 }
 
 export default DetailCharacter;
