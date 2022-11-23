@@ -51,9 +51,9 @@ function DetailList({ data, isLoading, id, genre }: Data) {
 							</div>
 							<div className="detail-sort">
 								<button onClick={() => setSortBtn((cur) => !cur)}>
-									최근개봉일
+									Release_date
 								</button>
-								<button>인기순</button>
+								<button>by Popularity</button>
 							</div>
 						</div>
 

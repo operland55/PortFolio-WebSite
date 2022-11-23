@@ -54,8 +54,8 @@ function DetailTvList({ data, isLoading, id, genre }: Data) {
 								<p>Similar movie</p>
 							</div>
 							<div className="detail-sort">
-								<button>최근개봉일</button>
-								<button>인기순</button>
+								<button>Release_data</button>
+								<button>by Popularity</button>
 							</div>
 						</div>
 
