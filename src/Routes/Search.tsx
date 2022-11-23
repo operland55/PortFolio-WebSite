@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { BsSearch } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+
 interface IForm {
 	keyword: string;
 }
@@ -39,7 +40,9 @@ function Search() {
 										/>
 									</div>
 								</form>
-								<Link to="/">취소</Link>
+								<Link to="/" className="md-hidden">
+									Back
+								</Link>
 							</div>
 
 							<SearchScreen />
