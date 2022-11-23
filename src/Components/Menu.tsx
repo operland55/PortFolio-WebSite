@@ -24,7 +24,13 @@ function Menu() {
 				</div>
 
 				<div className="bottom-bar-login">
-					<h2>Login/Join</h2>
+					<h2
+						onClick={() => {
+							navigate("/login");
+						}}
+					>
+						Login/Join
+					</h2>
 				</div>
 			</div>
 
