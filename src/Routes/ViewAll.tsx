@@ -1,7 +1,12 @@
 import React from "react";
+import Header from "../Components/Header";
 
 function ViewAll() {
-	return <div>ViewAll</div>;
+	return (
+		<>
+			<Header />
+		</>
+	);
 }
 
 export default ViewAll;

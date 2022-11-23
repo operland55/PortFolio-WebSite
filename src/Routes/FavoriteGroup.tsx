@@ -1,7 +1,16 @@
 import React from "react";
+import Header from "../Components/Header";
+import FavoriteList from "../layout/FavoriteList";
+import Footer from "../layout/Footer";
 
 function FavoriteGroup() {
-	return <div>FavoriteGroup</div>;
+	return (
+		<>
+			<Header />
+			<FavoriteList />
+			<Footer />
+		</>
+	);
 }
 
 export default FavoriteGroup;
