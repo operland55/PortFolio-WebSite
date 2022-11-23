@@ -1,12 +1,12 @@
 import React from "react";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
-import { getCastMovie, ICredits, IImg } from "../../api";
+import { getCastMovie } from "../../api";
 import { makeImagePath } from "../../utils";
 
 function DetailCharacter() {
 	let { DetailId } = useParams();
-	const { data: dataCast, isLoading: CastLoading } = useQuery<ICredits>(
+	const { data: dataCast, isLoading: CastLoading } = useQuery(
 		"CastData",
 		() => {
 			return getCastMovie(DetailId);
