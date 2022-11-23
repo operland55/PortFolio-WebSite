@@ -1,10 +1,11 @@
 import React from "react";
-import { useSetRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import { AiOutlineClose } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../assets/logo.png";
-import { MenuToggle } from "../atom";
+import { LoginId, MenuToggle } from "../atom";
 function Menu() {
+	const id = useRecoilValue(LoginId);
 	const closeBtn = useSetRecoilState(MenuToggle);
 	const navigate = useNavigate();
 	const onClick = () => {
@@ -29,7 +30,7 @@ function Menu() {
 							navigate("/login");
 						}}
 					>
-						Login/Join
+						{id ? id : "Login/Join"}
 					</h2>
 				</div>
 			</div>
