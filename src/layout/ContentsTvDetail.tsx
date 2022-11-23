@@ -10,7 +10,7 @@ import Header from "../Components/Header";
 import Footer from "./Footer";
 import DetailList from "../Components/DetailMovieComponents/DetailList";
 import DetailTvList from "../Components/DetailTvComponents/DetailTvList";
-import PreviewTv from "../Components/PreviewTv";
+// import PreviewTv from "../Components/PreviewTv";
 
 function ContentsTvDetail() {
 	let { DetailId } = useParams();
@@ -72,7 +72,7 @@ function ContentsTvDetail() {
 					<div className="col-sm-4">
 						<div className="contents">
 							<div className="contents-PosterContent">
-								{videoBtn ? <PreviewTv /> : null}
+								{/* {videoBtn ? <PreviewTv /> : null} */}
 								<div className="poster">
 									<div className="contents-thumbnail-group">
 										<div className="contents-thumbnail-img">
