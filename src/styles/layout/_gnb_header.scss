@@ -1,6 +1,6 @@
 .gnb-header {
 	@include flexbox(between);
-
+	padding: 0 5px;
 	position: relative;
 	z-index: 100;
 	.logo {
@@ -12,10 +12,10 @@
 	}
 	.header-icon {
 		@include flexbox(start);
-		gap: 10px;
+		gap: 20px;
 		button {
 			color: #fff;
-			font-size: 3.73333vw;
+			font-size: 4.73333vw;
 			line-height: 1.25em;
 			color: rgb(170, 170, 170);
 		}

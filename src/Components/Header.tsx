@@ -26,109 +26,105 @@ function Header() {
 				<div className="col-sm-4">
 					<div className="global-header">
 						<div className="global-header-container">
-							<div className="row">
-								<div className="col-sm-4">
-									<header className="gnb-header">
-										<div className="logo sm-only">
-											<Link to="/">
-												<img src={Logo} alt="logo" />
-											</Link>
-										</div>
+							<header className="gnb-header">
+								<div className="logo sm-only">
+									<Link to="/">
+										<img src={Logo} alt="logo" />
+									</Link>
+								</div>
 
-										<div className="header-icon sm-only">
-											<button className="header-search">
-												<Link to="/search">
-													<BsSearch />
-												</Link>
-											</button>
-											<button className="header-menu">
-												<BiMenu onClick={onClick} />
-											</button>
-										</div>
+								<div className="header-icon sm-only">
+									<button className="header-search">
+										<Link to="/search">
+											<BsSearch />
+										</Link>
+									</button>
+									<button className="header-menu">
+										<BiMenu onClick={onClick} />
+									</button>
+								</div>
 
-										<div className="header-top md-only">
-											{Id ? (
-												<>
-													<p className="header-top-id" onClick={profileShow}>
-														{Id} <AiOutlineArrowDown />
-													</p>
-													{profile ? (
-														<div className="header-profile">
-															<div className="profile-img">
-																<img src={Logo} alt="logo" />
-															</div>
-															<ul>
-																<li>{Id}</li>
-																<li>My love</li>
-																<li>My Page</li>
-																<li
-																	onClick={() => {
-																		setId("");
-																		// location.reload();
-																	}}
-																>
-																	Logout
-																</li>
-															</ul>
-														</div>
-													) : null}
-												</>
-											) : (
-												<p
-													className="header-top-login"
-													onClick={() => {
-														navigate("/login");
-													}}
-												>
-													Login
-												</p>
-											)}
-
-											<p>Service center</p>
-										</div>
-
-										<div className="header-bottom md-only">
-											<nav className="header-bottom-list">
-												<h1 className="visually-hidden">Menu</h1>
-
-												<div className="header-bottom-nav">
-													<div className="header-bottom-logo">
-														<Link to={"/"}>
-															<img src={Logo} alt="Logo" />
-														</Link>
+								<div className="header-top md-only">
+									{Id ? (
+										<>
+											<p className="header-top-id" onClick={profileShow}>
+												{Id} <AiOutlineArrowDown />
+											</p>
+											{profile ? (
+												<div className="header-profile">
+													<div className="profile-img">
+														<img src={Logo} alt="logo" />
 													</div>
-
-													<ul className="header-bottom-item">
-														<li className="header-bottom-items">
-															<Link to={"/"}>Home</Link>
-														</li>
-														<li>
-															<Link to={"/ViewAll"}>View all</Link>
-														</li>
-														<li className="header-bottom-items">
-															<Link to={"/Favorites"}>Favorites</Link>
-														</li>
-														<li className="header-bottom-items">
-															<Link to={"/Advertisement"}>Advertisement</Link>
+													<ul>
+														<li>{Id}</li>
+														<li>My love</li>
+														<li>My Page</li>
+														<li
+															onClick={() => {
+																setId("");
+																// location.reload();
+															}}
+														>
+															Logout
 														</li>
 													</ul>
 												</div>
-											</nav>
+											) : null}
+										</>
+									) : (
+										<p
+											className="header-top-login"
+											onClick={() => {
+												navigate("/login");
+											}}
+										>
+											Login
+										</p>
+									)}
 
-											<div className="header-bottom-search">
-												<Link to="/search">
-													<BsSearch /> Search
+									<p>Service center</p>
+								</div>
+
+								<div className="header-bottom md-only">
+									<nav className="header-bottom-list">
+										<h1 className="visually-hidden">Menu</h1>
+
+										<div className="header-bottom-nav">
+											<div className="header-bottom-logo">
+												<Link to={"/"}>
+													<img src={Logo} alt="Logo" />
 												</Link>
 											</div>
-										</div>
-									</header>
-								</div>
-							</div>
-						</div>
 
-						{menuBtn ? <Menu /> : ""}
+											<ul className="header-bottom-item">
+												<li className="header-bottom-items">
+													<Link to={"/"}>Home</Link>
+												</li>
+												<li>
+													<Link to={"/ViewAll"}>View all</Link>
+												</li>
+												<li className="header-bottom-items">
+													<Link to={"/Favorites"}>Favorites</Link>
+												</li>
+												<li className="header-bottom-items">
+													<Link to={"/Advertisement"}>Advertisement</Link>
+												</li>
+											</ul>
+										</div>
+									</nav>
+
+									<div className="header-bottom-search">
+										<Link to="/search">
+											<BsSearch /> Search
+										</Link>
+									</div>
+								</div>
+							</header>
+						</div>
 					</div>
 				</div>
+
+				{menuBtn ? <Menu /> : ""}
 			</div>
 		</div>
 	);
