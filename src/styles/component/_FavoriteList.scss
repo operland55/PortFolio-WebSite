@@ -4,7 +4,6 @@
 		@include padding-style;
 		height: 18.1333vw;
 		margin: 0 -8px;
-		// padding: 0 8px;
 		background-color: #252525;
 		svg {
 			font-size: 7vw;
@@ -45,7 +44,6 @@
 					top: 5px;
 					right: 5px;
 					transition: opacity 500ms ease-in-out;
-					pointer-events: none;
 				}
 				&:hover {
 					svg {
