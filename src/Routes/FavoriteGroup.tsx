@@ -6,9 +6,13 @@ import Footer from "../layout/Footer";
 function FavoriteGroup() {
 	return (
 		<>
-			<Header />
+			<div className="md-only">
+				<Header />
+			</div>
 			<FavoriteList />
-			<Footer />
+			<div className="md-only">
+				<Footer />
+			</div>
 		</>
 	);
 }

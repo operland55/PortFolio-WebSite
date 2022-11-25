@@ -15,11 +15,10 @@ function FavoriteList() {
 	const myId = useRecoilValue(LoginId);
 	const navigate = useNavigate();
 
-	const listDeLite = (data: any, name: string) => {
+	const listDeLite = (dataId: any, name: string) => {
 		setMyList((cur) => {
-			const DeliteList = myList.filter((item) => item.id == data);
-			const targetIndex = DeliteList.findIndex((item) => item.data.id == name);
-
+			const DeLiteList = myList.filter((item) => item.id == dataId);
+			const targetIndex = DeLiteList.findIndex((item) => item.data.id == name);
 			return [...cur.slice(0, targetIndex), ...cur.slice(targetIndex + 1)];
 		});
 	};
@@ -39,25 +38,34 @@ function FavoriteList() {
 						</header>
 
 						<h2 className="favorite-title">My Interest Contents</h2>
-						<ul className="favorite-lists">
-							{FilterMyList.map((item: any, key) => (
-								<li key={key} className="favorite-item">
-									<div className="favorite-item-img ">
-										<img
-											src={makeImagePath(`./${item.data.poster_path}`)}
-											alt="poster"
-										/>
-										<BsTrash
-											onClick={() => {
-												listDeLite(item.id, item.data.id);
-											}}
-										/>
-									</div>
-									<p>{item.data.name ?? item.data.title}</p>
-									<AiFillHeart color="red" />
-								</li>
-							))}
-						</ul>
+						{myList.length === 0 ? (
+							<h1 className="favorite-not">Not Contents</h1>
+						) : (
+							<ul className="favorite-lists">
+								{FilterMyList.map((item: any, key) => (
+									<li key={key} className="favorite-item">
+										<div className="favorite-item-img ">
+											<img
+												src={makeImagePath(`./${item.data.poster_path}`)}
+												alt="poster"
+												onClick={() => {
+													item.data.name
+														? navigate(`/contentsTv/${item.data.id}`)
+														: navigate(`/ContentsMovie/${item.data.id}`);
+												}}
+											/>
+											<BsTrash
+												onClick={() => {
+													listDeLite(item.id, item.data.id);
+												}}
+											/>
+										</div>
+										<p>{item.data.name ?? item.data.title}</p>
+										<AiFillHeart color="red" />
+									</li>
+								))}
+							</ul>
+						)}
 					</div>
 				</div>
 			</div>
