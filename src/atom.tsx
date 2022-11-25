@@ -20,7 +20,7 @@ interface IForm {
 }
 
 interface MyList {
-	[key: string]: string;
+	[key: string]: any;
 }
 
 export const LoginId = atom({
