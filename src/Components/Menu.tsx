@@ -27,7 +27,9 @@ function Menu() {
 				<div className="bottom-bar-login">
 					<h2
 						onClick={() => {
-							navigate("/login");
+							{
+								id ? "" : navigate("/login");
+							}
 						}}
 					>
 						{id ? id : "Login/Join"}
