@@ -45,6 +45,7 @@
 					top: 5px;
 					right: 5px;
 					transition: opacity 500ms ease-in-out;
+					pointer-events: none;
 				}
 				&:hover {
 					svg {
