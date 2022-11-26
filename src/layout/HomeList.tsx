@@ -73,7 +73,7 @@ function List() {
 								</div>
 
 								<div className="list-view">
-									<Link to="contents">View More</Link>
+									<Link to="/viewall">View More</Link>
 								</div>
 							</div>
 
@@ -91,7 +91,7 @@ function List() {
 								</div>
 
 								<div className="list-view">
-									<Link to="contents">View More</Link>
+									<Link to="/viewall">View More</Link>
 								</div>
 							</div>
 
@@ -109,7 +109,7 @@ function List() {
 								</div>
 
 								<div className="list-view">
-									<Link to="contents">View More</Link>
+									<Link to="/viewall">View More</Link>
 								</div>
 							</div>
 
@@ -127,7 +127,7 @@ function List() {
 								</div>
 
 								<div className="list-view">
-									<Link to="contents">View More</Link>
+									<Link to="/viewall">View More</Link>
 								</div>
 							</div>
 							<HomeListrecommend data={result[4].data} isLoading={loading} />
@@ -144,7 +144,7 @@ function List() {
 								</div>
 
 								<div className="list-view">
-									<Link to="contents">View More</Link>
+									<Link to="/viewall">View More</Link>
 								</div>
 							</div>
 							<HomeListBox data={result[5].data} isLoading={loading} />
@@ -161,7 +161,7 @@ function List() {
 								</div>
 
 								<div className="list-view">
-									<Link to="contents">View More</Link>
+									<Link to="/viewall">View More</Link>
 								</div>
 							</div>
 							<HomeListrecommend data={result[3].data} isLoading={loading} />
@@ -178,7 +178,7 @@ function List() {
 								</div>
 
 								<div className="list-view">
-									<Link to="contents">View More</Link>
+									<Link to="/viewall">View More</Link>
 								</div>
 							</div>
 
@@ -196,7 +196,7 @@ function List() {
 								</div>
 
 								<div className="list-view">
-									<Link to="contents">View More</Link>
+									<Link to="/viewall">View More</Link>
 								</div>
 							</div>
 
@@ -214,7 +214,7 @@ function List() {
 								</div>
 
 								<div className="list-view">
-									<Link to="contents">View More</Link>
+									<Link to="/viewall">View More</Link>
 								</div>
 							</div>
 							<HomeListBox data={result[8].data} isLoading={loading} />
