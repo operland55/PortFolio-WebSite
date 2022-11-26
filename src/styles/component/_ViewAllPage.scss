@@ -1,6 +1,5 @@
 .view {
 	position: relative;
-	height: 100vh;
 	.viewAllContainer {
 		.viewall-header {
 			@include flexbox(between);
@@ -33,9 +32,31 @@
 			}
 		}
 		.title {
-			font-size: 5.33333vw;
-			font-weight: 700;
-			text-align: center;
+			h1 {
+				font-size: 5.33333vw;
+				font-weight: 700;
+				padding-top: 30px;
+				text-align: center;
+			}
+		}
+		.viewAll-btn {
+			button {
+				width: 100%;
+				position: fixed;
+				top: 50%;
+				transform: translateY(-50%);
+				svg {
+					font-size: 44px;
+				}
+			}
+			.left-btn {
+				text-align: left;
+				left: 0;
+			}
+			.right-btn {
+				text-align: right;
+				right: 0;
+			}
 		}
 		.viewall-list {
 			@include flexbox(between);
@@ -43,7 +64,6 @@
 			padding: 30px 0;
 			height: 100%;
 			overflow-y: auto;
-			pointer-events: none;
 			li {
 				cursor: pointer;
 				width: 28.8vw;
@@ -55,19 +75,6 @@
 					@include truncate;
 				}
 			}
-			.prevBtn,
-			.nextBtn {
-				position: fixed;
-				top: 50%;
-				left: 0;
-				z-index: 10;
-				transform: translateY(-80%);
-
-				svg {
-					font-size: 40px;
-					cursor: pointer;
-				}
-			}
 		}
 
 		.viewall-footer {
@@ -76,12 +83,10 @@
 			width: 100%;
 			left: 0;
 			border-top: 1px solid white;
+
 			ul {
 				@include flexbox(between);
-				height: 100%;
-
 				li {
-					height: 100%;
 					text-align: center;
 					flex: 1;
 					&:first-child {
@@ -92,6 +97,57 @@
 						margin-top: 5vw;
 						font-size: 35px;
 					}
+				}
+			}
+		}
+		@include responsive(T) {
+			.title {
+				@include flexbox(between);
+
+				h1 {
+					font-size: 34px;
+					text-align: start;
+					padding-top: 0;
+				}
+				.genre-select {
+					@include flexbox(start);
+					gap: 20px;
+					padding: 10px;
+
+					button {
+						padding: 10px 20px;
+						color: #fff;
+						border-radius: 5px;
+						font-weight: 700;
+						background-color: #f61f73;
+					}
+				}
+			}
+			.viewall-list {
+				@include flexbox;
+				@include listStyle;
+				padding: 30px 0;
+				li {
+					cursor: pointer;
+					width: 200px;
+					padding-bottom: 12px;
+					img {
+						@include img-style;
+						border-radius: 50px;
+					}
+					p {
+						@include truncate;
+					}
+				}
+			}
+		}
+		@include responsive(BigD) {
+			.viewAll-btn {
+				.left-btn {
+					left: 10%;
+				}
+				.right-btn {
+					right: 10%;
 				}
 			}
 		}

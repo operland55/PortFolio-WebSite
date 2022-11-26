@@ -11,7 +11,7 @@ import { makeImagePath } from "../utils";
 function ViewAllPage() {
 	const [num, setNum] = useState(1);
 	const [genre, setGenre] = useState("movie");
-	const [movieData, setMovieData] = useState<IGetResult[]>();
+	const [data, setData] = useState<IGetResult[]>();
 	const navigate = useNavigate();
 
 	const genreBtn = (e: string) => {
@@ -41,16 +41,18 @@ function ViewAllPage() {
 					`${BASE_PATH}/${genre}/now_playing?api_key=${API_KEY}&language=en-US&page=${num}`
 				);
 				const json = await response.json();
-				setMovieData(json.results);
+				setData(json.results);
 			} else {
 				const response = await fetch(
 					`${BASE_PATH}/${genre}/top_rated?api_key=${API_KEY}&language=en-US&page=${num}`
 				);
 				const json = await response.json();
-				setMovieData(json.results);
+				setData(json.results);
 			}
 		})();
 	}, [num, genre]);
+
+	console.log(data);
 	return (
 		<div className="view">
 			<div className="container">
@@ -78,13 +80,47 @@ function ViewAllPage() {
 									<BiMenu />
 								</div>
 							</header>
-							<AiOutlineArrowRight color="white" onClick={nextBtn} />
-							<div className="title">{genre.toUpperCase()}</div>
+							<div className="title">
+								<h1>{genre.toUpperCase()}</h1>
+								<div className="genre-select sm-hidden">
+									<button
+										onClick={() => {
+											genreBtn("movie");
+										}}
+									>
+										Movie
+									</button>
+									<button
+										onClick={() => {
+											genreBtn("tv");
+										}}
+									>
+										Tv
+									</button>
+								</div>
+							</div>
 
-							<div>
+							<div className="viewAll-btn">
+								<button className="left-btn">
+									<AiOutlineArrowLeft color="white" onClick={prevBtn} />
+								</button>
+								<button className="right-btn">
+									<AiOutlineArrowRight color="white" onClick={nextBtn} />
+								</button>
+							</div>
+
+							<main className="viewall-main">
 								<ul className="viewall-list">
-									{movieData?.map((item: any, key: number) => (
-										<li key={key} className="viewall-items">
+									{data?.map((item: any, key: number) => (
+										<li
+											key={key}
+											className="viewall-items"
+											onClick={() => {
+												item.first_air_date
+													? navigate(`/contentsTv/${item.id}`)
+													: navigate(`/contentsMovie/${item.id}`);
+											}}
+										>
 											<div className="item-img">
 												<img
 													src={makeImagePath(`./${item.poster_path}`)}
@@ -96,7 +132,7 @@ function ViewAllPage() {
 										</li>
 									))}
 								</ul>
-							</div>
+							</main>
 
 							<footer className="viewall-footer sm-only">
 								<ul>
