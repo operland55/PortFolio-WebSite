@@ -4,7 +4,7 @@
 		@include padding-style;
 		height: 18.1333vw;
 		margin: 0 -8px;
-		background-color: #252525;
+		background-color: $primary;
 		svg {
 			font-size: 7vw;
 			cursor: pointer;
@@ -70,7 +70,7 @@
 			gap: 30px;
 			padding: 33px;
 			margin-bottom: 10%;
-			background-color: #252525;
+			background-color: $primary;
 			.favorite-item {
 				width: 170px;
 				padding-bottom: 0px;

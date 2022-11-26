@@ -1,7 +1,7 @@
 .detailContainer {
 	.detailWrapper {
 		@include padding-style;
-		background-color: #252525;
+		background-color: $primary;
 		margin-bottom: 5.33333vw;
 		border-radius: 0.533333vw;
 		.detail-nav {
