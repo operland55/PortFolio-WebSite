@@ -11,9 +11,7 @@
 	}
 	.searchScreen-list {
 		@include flexbox(between);
-		padding: 3.33333vw;
-		flex-wrap: wrap;
-		gap: 10px;
+		@include listStyle;
 		&-items {
 			@include truncate;
 			padding-bottom: 13.6667vw;

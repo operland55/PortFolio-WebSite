@@ -24,9 +24,8 @@
 	}
 	.favorite-lists {
 		@include flexbox(between);
-		padding: 3.33333vw;
-		flex-wrap: wrap;
-		gap: 10px;
+		@include listStyle;
+
 		.favorite-item {
 			@include truncate;
 			width: 28.8vw;
