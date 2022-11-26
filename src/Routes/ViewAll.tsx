@@ -1,10 +1,14 @@
 import React from "react";
 import Header from "../Components/Header";
+import ViewAllPage from "../layout/ViewAllPage";
 
 function ViewAll() {
 	return (
 		<>
-			<Header />
+			<div className="sm-hidden">
+				<Header />
+			</div>
+			<ViewAllPage />
 		</>
 	);
 }
