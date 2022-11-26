@@ -1,5 +1,5 @@
-const API_KEY = "bb50b072ab393b23b85d0c258de3c425";
-const BASE_PATH = "https://api.themoviedb.org/3";
+export const API_KEY = "bb50b072ab393b23b85d0c258de3c425";
+export const BASE_PATH = "https://api.themoviedb.org/3";
 
 export interface Icredits {
 	cast: ICast[];
