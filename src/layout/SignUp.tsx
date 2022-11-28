@@ -39,23 +39,23 @@ function SignUp() {
 	const onValid = (data: IForm) => {
 		for (const item of Info) {
 			if (item.Id === data.Id) {
-				return alert("이미있는아뒤에요");
+				return alert("It's behind the already id existing ");
 			}
 		}
 		setInfo((oldInfo) => {
 			return [{ Id: data.Id, Password: data.Password }, ...oldInfo];
 		});
-		alert(`회원가입을 축하해요 ${data.Id} 님`);
+		alert(`Congratulations on becoming a member ${data.Id} `);
 		navigate("/login");
 	};
+	// console.log(Object.entries.(Info));
 
 	const checkBtn = () => {
-		for (const item of Info) {
-			if (IdValue.length < 5) {
-				alert("5 characters or more");
-			} else if (item.Id === IdValue) {
-				alert("it already exists");
-			}
+		let checkId = Info.filter((item) => (item.Id === IdValue ? IdValue : null));
+		try {
+			checkId[0].Id ? alert("Id that already exists") : null;
+		} catch (error) {
+			alert("Available Id");
 		}
 	};
 
@@ -89,8 +89,8 @@ function SignUp() {
 												{...register("Id", {
 													required: true,
 													minLength: {
-														value: 5,
-														message: "5 characters or more",
+														value: 4,
+														message: "4 characters or more",
 													},
 												})}
 												onChange={(e) => {
