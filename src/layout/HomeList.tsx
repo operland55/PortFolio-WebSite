@@ -64,7 +64,7 @@ function List() {
 				<div className="col-sm-4">
 					<div className="list-container">
 						<div className="list-box">
-							<h2 className="list-title">Top-Lated</h2>
+							<h2 className="list-title">Top-Rated</h2>
 
 							<div className="list-explanation">
 								<div className="list-name">
@@ -82,7 +82,7 @@ function List() {
 					</div>
 					<div className="list-container">
 						<div className="list-box">
-							<h2 className="list-title">Top-Lated</h2>
+							<h2 className="list-title">Top-Rated</h2>
 
 							<div className="list-explanation">
 								<div className="list-name">
