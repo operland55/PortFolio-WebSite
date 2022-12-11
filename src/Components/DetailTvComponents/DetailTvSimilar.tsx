@@ -23,7 +23,7 @@ function DetailTvSimilar({ id }: any) {
 		})();
 	}, [id]);
 
-	console.log("data", data);
+
 	return (
 		<ul className="detail-lists">
 			{data?.results.slice(0, 10).map((item: any, key: any) => (

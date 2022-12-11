@@ -8,14 +8,14 @@ import {
 	IGetResult,
 } from "../api";
 import { Link } from "react-router-dom";
-import HomeListCards from "../Components/HomeListCards";
 import {
 	AiOutlineArrowRight,
 	AiOutlineArrowLeft,
 	AiFillPicture,
 } from "react-icons/ai";
 import HomeListrecommend from "./HomeListrecommend";
-import HomeListBox from "../Components/HomeListBox";
+import HomeListBox from "../Components/HomeListComponets/HomeListBox";
+import HomeListCards from "../Components/HomeListComponets/HomeListCards";
 
 function List() {
 	const result = useQueries([

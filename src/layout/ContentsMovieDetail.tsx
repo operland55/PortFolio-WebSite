@@ -9,7 +9,7 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import Header from "../Components/Header";
 import Footer from "./Footer";
 import DetailList from "../Components/DetailMovieComponents/DetailList";
-import PreviewVideo from "../Components/PreviewVideo";
+import PreviewVideo from "../Components/PreviewComponets/PreviewVideo";
 
 function ContentsMovieDetail() {
 	const [myListObj, setMyListObj] = useRecoilState(MyList);

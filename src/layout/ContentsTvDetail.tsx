@@ -10,7 +10,7 @@ import Header from "../Components/Header";
 import Footer from "./Footer";
 import DetailList from "../Components/DetailMovieComponents/DetailList";
 import DetailTvList from "../Components/DetailTvComponents/DetailTvList";
-// import PreviewTv from "../Components/PreviewTv";
+import PreviewTv from "../Components/PreviewComponets/PreviewTv";
 
 function ContentsTvDetail() {
 	let { DetailId } = useParams();
@@ -32,10 +32,6 @@ function ContentsTvDetail() {
 			setIsLoading(false);
 		})();
 	}, [DetailId]);
-
-	// const { data, isLoading } = useQuery("TvDetail", () => {
-	// 	return getDetailTV(DetailId);
-	// });
 
 	const { data: genre, isLoading: genreLoading } = useQuery(
 		"GenreId",
@@ -61,7 +57,7 @@ function ContentsTvDetail() {
 
 		window.localStorage.getItem(`${id}`);
 	};
-	console.log(data);
+
 	return (
 		<>
 			<div className="sm-hidden">
@@ -72,7 +68,7 @@ function ContentsTvDetail() {
 					<div className="col-sm-4">
 						<div className="contents">
 							<div className="contents-PosterContent">
-								{/* {videoBtn ? <PreviewTv /> : null} */}
+								{videoBtn ? <PreviewTv /> : null}
 								<div className="poster">
 									<div className="contents-thumbnail-group">
 										<div className="contents-thumbnail-img">

@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Data } from "../Components/HomeListComponets/HomeListCards";
 import { makeImagePath } from "../utils";
+import { Data } from "./HomeListCards";
 
-function HomeListRecommend({ data, isLoading }: Data) {
+function HomeListrecommend({ data, isLoading }: Data) {
 	return (
 		<div className="recommend-container">
 			<Link to={`ContentsMovie/${data?.results[0].id}`}>
@@ -22,7 +22,7 @@ function HomeListRecommend({ data, isLoading }: Data) {
 					data?.results.slice(1, 7).map((item: any, key: any) => (
 						<Link to={`ContentsMovie/${item.id}`} key={key}>
 							<li className="recommend-cards">
-								<img src={makeImagePath(`./${item.backdrop_path}`)}></img>
+								<img src={makeImagePath(`./${item.poster_path}`)}></img>
 								<div className="list-recommend-info">
 									<span>{item.title}</span>
 								</div>
@@ -35,4 +35,4 @@ function HomeListRecommend({ data, isLoading }: Data) {
 	);
 }
 
-export default HomeListRecommend;
+export default HomeListrecommend;
