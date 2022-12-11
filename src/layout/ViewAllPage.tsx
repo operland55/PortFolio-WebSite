@@ -8,10 +8,14 @@ import { useNavigate } from "react-router-dom";
 import Logo from "../assets/logo.png";
 import { API_KEY, BASE_PATH, IGetResult } from "../api";
 import { makeImagePath } from "../utils";
+import { MenuToggle } from "../atom";
+import { useRecoilState } from "recoil";
+import Menu from "../Components/Menu";
 function ViewAllPage() {
 	const [num, setNum] = useState(1);
 	const [genre, setGenre] = useState("movie");
 	const [data, setData] = useState<IGetResult[]>();
+	const [menuBtn, setMenuBtn] = useRecoilState(MenuToggle);
 	const navigate = useNavigate();
 
 	const genreBtn = (e: string) => {
@@ -51,8 +55,6 @@ function ViewAllPage() {
 			}
 		})();
 	}, [num, genre]);
-
-	console.log(data);
 	return (
 		<div className="view">
 			<div className="container">
@@ -77,7 +79,11 @@ function ViewAllPage() {
 											navigate("/search");
 										}}
 									/>
-									<BiMenu />
+									<BiMenu
+										onClick={() => {
+											setMenuBtn((cur) => !cur);
+										}}
+									/>
 								</div>
 							</header>
 							<div className="title">
@@ -156,7 +162,8 @@ function ViewAllPage() {
 							</footer>
 						</div>
 					</div>
-				</div>
+				</div>{" "}
+				{menuBtn ? <Menu /> : ""}
 			</div>
 		</div>
 	);
