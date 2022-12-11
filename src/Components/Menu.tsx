@@ -7,6 +7,7 @@ import { LoginId, MenuToggle } from "../atom";
 function Menu() {
 	const id = useRecoilValue(LoginId);
 	const closeBtn = useSetRecoilState(MenuToggle);
+
 	const navigate = useNavigate();
 	const onClick = () => {
 		closeBtn(false);
@@ -41,16 +42,24 @@ function Menu() {
 				<h1 className="visually-hidden">Menu</h1>
 				<ul className="bottom-bar-item">
 					<li className="bottom-bar-items active">
-						<Link to={"/"}>Home</Link>
+						<Link to={"/"} onClick={onClick}>
+							Home
+						</Link>
 					</li>
 					<li>
-						<Link to={"/ViewAll"}>ViewAll</Link>
+						<Link to={"/ViewAll"} onClick={onClick}>
+							ViewAll
+						</Link>
 					</li>
 					<li className="bottom-bar-items">
-						<Link to={"/Favorites"}>Favorites</Link>
+						<Link to={"/Favorites"} onClick={onClick}>
+							Favorites
+						</Link>
 					</li>
 					<li className="bottom-bar-items">
-						<Link to={"/Advertisement"}>Advertisement</Link>
+						<Link to={"/Advertisement"} onClick={onClick}>
+							Advertisement
+						</Link>
 					</li>
 				</ul>
 			</nav>
