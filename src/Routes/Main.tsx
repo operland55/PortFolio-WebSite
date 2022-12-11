@@ -1,5 +1,5 @@
 import React from "react";
-import Banner from "../Components/Banner";
+import Banner from "../Components/BannerComponets/Banner";
 import Footer from "../layout/Footer";
 import Famousesay from "../Components/Famousesay";
 import HomeList from "../layout/HomeList";

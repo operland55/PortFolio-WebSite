@@ -48,7 +48,7 @@ function SignUp() {
 		alert(`Congratulations on becoming a member ${data.Id} `);
 		navigate("/login");
 	};
-	// console.log(Object.entries.(Info));
+
 
 	const checkBtn = () => {
 		let checkId = Info.filter((item) => (item.Id === IdValue ? IdValue : null));
