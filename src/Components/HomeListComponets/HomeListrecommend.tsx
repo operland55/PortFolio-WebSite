@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { makeImagePath } from "../utils";
+import { makeImagePath } from "../../utils";
 import { Data } from "./HomeListCards";
 
 function HomeListrecommend({ data, isLoading }: Data) {

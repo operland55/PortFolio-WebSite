@@ -8,7 +8,6 @@ import Home from "./Routes/Home";
 import Search from "./Routes/Search";
 import ContentsMovieDetail from "./layout/ContentsMovieDetail";
 import ContentsTvDetail from "./layout/ContentsTvDetail";
-import Preview from "./Components/PreviewVideo";
 import Login from "./Routes/Login";
 import SignUp from "./layout/SignUp";
 function App() {

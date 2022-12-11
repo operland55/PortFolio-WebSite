@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { getSimilarTv } from "../../api";
-import { Data } from "../HomeListCards";
 import DetailTvImg from "./DetailTvImg";
 import DetailTvReview from "./DetailTvReview";
 import DetailTvCharacter from "./DetailTvCharacter";
 import DetailTvSimilar from "./DetailTvSimilar";
+import { Data } from "../HomeListComponets/HomeListCards";
 function DetailTvList({ data, isLoading, id, genre }: Data) {
 	const { data: similarData, isLoading: similarDataLoading } = useQuery(
 		"similarTv",

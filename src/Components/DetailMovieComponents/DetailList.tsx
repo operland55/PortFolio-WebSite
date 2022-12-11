@@ -6,8 +6,8 @@ import { makeImagePath } from "../../utils";
 import DetailImg from "./DetailImg";
 import DetailCharacter from "./DetailCharacter";
 import DetailReview from "./DetailReview";
-import { Data } from "../HomeListCards";
 import DetailSimilar from "./DetailSimilar";
+import { Data } from "../HomeListComponets/HomeListCards";
 
 function DetailList({ data, isLoading, id, genre }: Data) {
 	const [value, setValue] = useState("similar");
