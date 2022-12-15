@@ -32,12 +32,16 @@
 	.Advertisement-main {
 		max-width: 450px;
 		margin: 0 auto;
+
 		h1 {
 			display: none;
 		}
 		.form-wrapper {
 			padding: 6vw 2.33333vw 1.06667vw;
-
+			.errorMessage {
+				padding: 0 15px;
+				color: rgb(204, 144, 144);
+			}
 			.form-group {
 				padding: 1.06667vw 4.33333vw;
 				background-color: #333;
@@ -49,6 +53,8 @@
 					color: #fff;
 				}
 				textarea {
+					display: block;
+					width: 100%;
 					color: #fff;
 				}
 			}
@@ -123,7 +129,7 @@
 					}
 				}
 				.form-label {
-					padding: 1.2vw;
+					padding: 15px 10px;
 					.form-checkbox {
 						label {
 							span {
@@ -133,7 +139,7 @@
 					}
 				}
 				.form-agree {
-					padding: 1.2vw;
+					padding: 15px 10px;
 					input {
 						width: 20px;
 						height: 20px;
